@@ -320,7 +320,7 @@ section {
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
@@ -578,12 +578,60 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 192, 1, 0.9);
+    background: rgba(255, 192, 1, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
+}
+
+/* Carousel Eye Button - NEW */
+.carousel-view-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: var(--dark-bg);
+    color: var(--primary-color);
+    border: 3px solid var(--dark-bg);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+    animation: pulseButton 2s infinite;
+}
+
+.carousel-view-btn:hover {
+    background: transparent;
+    color: var(--dark-bg);
+    border-color: var(--dark-bg);
+    transform: scale(1.15);
+    animation: none;
+}
+
+.carousel-view-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+@keyframes pulseButton {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(10, 10, 10, 0.7);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(10, 10, 10, 0);
+    }
+}
+
+.project-link {
+    display: none;
 }
 
 .project-card:hover .project-overlay {

@@ -395,4 +395,59 @@ document.addEventListener("DOMContentLoaded", function () {
 			closeLightbox();
 		}
 	});
+	// ===== CAROUSEL LIGHTBOX FUNCTIONALITY =====
+	console.log("🔍 Initializing carousel lightbox...");
+
+	// Get all carousel view buttons
+	const carouselViewButtons = document.querySelectorAll(".carousel-view-btn");
+	console.log("✅ Found", carouselViewButtons.length, "carousel view buttons");
+
+	// Add click event to each carousel button
+	carouselViewButtons.forEach((button, index) => {
+		console.log(`Adding listener to carousel button ${index + 1}`);
+		button.addEventListener("click", function (e) {
+			console.log("🖱️ Carousel button clicked!");
+			e.preventDefault();
+			e.stopPropagation();
+
+			const projectCard = button.closest(".project-card");
+			const image = projectCard.querySelector(".project-image img");
+			const projectTitle = projectCard.querySelector(".project-content h3");
+
+			console.log("Carousel project card:", projectCard);
+			console.log("Image found:", !!image);
+
+			if (image) {
+				console.log("📷 Opening carousel image:", image.src);
+
+				// Get existing lightbox elements
+				const lightbox = document.getElementById("lightbox");
+				const lightboxImage = document.getElementById("lightboxImage");
+				const lightboxVideo = document.getElementById("lightboxVideo");
+				const lightboxInfo = document.getElementById("lightboxInfo");
+
+				// Hide video, show image
+				lightboxVideo.style.display = "none";
+				lightboxImage.style.display = "block";
+
+				// Set image source
+				lightboxImage.src = image.src;
+				lightboxImage.alt = image.alt || "";
+
+				// Set title
+				if (projectTitle) {
+					lightboxInfo.querySelector("h4").textContent =
+						projectTitle.textContent;
+				}
+
+				// Show lightbox
+				lightbox.classList.add("active");
+				document.body.style.overflow = "hidden";
+
+				console.log("📷 Carousel lightbox opened!");
+			} else {
+				console.error("❌ No image found in carousel!");
+			}
+		});
+	});
 });
