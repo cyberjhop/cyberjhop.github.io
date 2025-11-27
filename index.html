@@ -1,862 +1,1625 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jhop - Portfolio</title>
+		<link rel="stylesheet" href="res/css/main.css" />
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="container">
+				<div class="logo">Jhop</div>
+				<ul class="nav-menu">
+					<li><a href="#home" class="nav-link">Home</a></li>
+					<li><a href="#about" class="nav-link">About</a></li>
+					<li><a href="#skills" class="nav-link">Skills</a></li>
+					<li><a href="#tools" class="nav-link">Tools</a></li>
+					<li><a href="#projects" class="nav-link">Projects</a></li>
+					<li><a href="#contact" class="nav-link">Contact</a></li>
+				</ul>
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
 
-<head>
-    <meta charset="utf-8">
-    <title>Jofil | cyberjhop</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+		<!-- Hero Section -->
+		<section id="home" class="hero">
+			<div class="container">
+				<div class="hero-content fade-in">
+					<h1 class="hero-title">
+						Hi, I'm <span class="highlight">Jhop</span>
+					</h1>
+					<p class="hero-subtitle">
+						Full Stack Developer & Creative Problem Solver
+					</p>
+					<p class="hero-description">
+						I build elegant digital solutions that combine functionality with
+						beautiful design. Passionate about creating experiences that make a
+						difference.
+					</p>
+					<div class="hero-buttons">
+						<a href="#projects" class="btn btn-primary">View My Work</a>
+						<a href="#contact" class="btn btn-secondary">Get In Touch</a>
+					</div>
+				</div>
+			</div>
+			<div class="hero-scroll">
+				<span>Scroll Down</span>
+				<div class="scroll-indicator"></div>
+			</div>
+		</section>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+		<!-- About Section -->
+		<section id="about" class="about">
+			<div class="container">
+				<h2 class="section-title fade-in-up">About Me</h2>
+				<div class="about-content">
+					<div class="about-image fade-in-left">
+						<img src="img/profile.png" alt="Profile Photo" />
+						<div class="image-border"></div>
+					</div>
+					<div class="about-text fade-in-right">
+						<h3>Hello! I'm a passionate developer</h3>
+						<p>
+							With over 5 years of experience in web development, I specialize
+							in creating responsive, user-friendly applications that solve
+							real-world problems. My journey in tech started with a curiosity
+							about how things work, and it has evolved into a career I'm truly
+							passionate about.
+						</p>
+						<p>
+							I believe in writing clean, maintainable code and staying
+							up-to-date with the latest technologies. When I'm not coding, you
+							can find me exploring new design trends, contributing to
+							open-source projects, or enjoying a good cup of coffee.
+						</p>
+						<div class="about-stats">
+							<div class="stat-item">
+								<span class="stat-number">50+</span>
+								<span class="stat-label">Projects Completed</span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-number">30+</span>
+								<span class="stat-label">Happy Clients</span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-number">5+</span>
+								<span class="stat-label">Years Experience</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+		<!-- Skills Section -->
+		<section id="skills" class="skills">
+			<div class="container">
+				<h2 class="section-title fade-in-up">My Skillset</h2>
+				<div class="skills-grid">
+					<div class="skill-card fade-in-up">
+						<div class="skill-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path d="M16 18L22 12L16 6"></path>
+								<path d="M8 6L2 12L8 18"></path>
+							</svg>
+						</div>
+						<h3>Web Development</h3>
+						<div class="skill-bar">
+							<div class="skill-progress" data-progress="90"></div>
+						</div>
+						<p>HTML, CSS, JavaScript, Vue.js, Bootstrap, Laravel, PHP</p>
+					</div>
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+					<div class="skill-card fade-in-up" style="animation-delay: 0.4s">
+						<div class="skill-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+								<circle cx="8.5" cy="8.5" r="1.5"></circle>
+								<polyline points="21 15 16 10 5 21"></polyline>
+							</svg>
+						</div>
+						<h3>Multimedia</h3>
+						<div class="skill-bar">
+							<div class="skill-progress" data-progress="85"></div>
+						</div>
+						<p>Graphic design, Video editing, Image manipulation</p>
+					</div>
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+					<div class="skill-card fade-in-up" style="animation-delay: 0.2s">
+						<div class="skill-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<circle cx="12" cy="12" r="10"></circle>
+								<circle cx="12" cy="12" r="6"></circle>
+								<circle cx="12" cy="12" r="2"></circle>
+							</svg>
+						</div>
+						<h3>Automations</h3>
+						<div class="skill-bar">
+							<div class="skill-progress" data-progress="80"></div>
+						</div>
+						<p>n8n, make, zapier</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Tools Section -->
+		<section id="tools" class="tools">
+			<div class="container">
+				<h2 class="section-title fade-in-up">Tools & Technologies</h2>
+				<p class="section-subtitle">The toolkit I use to bring ideas to life</p>
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+				<div class="tools-grid">
+					<div class="tool-card fade-in-up">
+						<div class="tool-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+								<path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+							</svg>
+						</div>
+						<h3>VS Code</h3>
+						<p>Primary code editor</p>
+					</div>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+					<div class="tool-card fade-in-up" style="animation-delay: 0.2s">
+						<div class="tool-icon">
+							<svg
+								width="39"
+								height="57"
+								viewBox="0 0 39 57"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M19.5 0H9.75C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5H19.5V0Z"
+									fill="#F24E1E"
+								/>
 
+								<path
+									d="M19.5 0H29.25C34.635 0 39 4.365 39 9.75C39 15.135 34.635 19.5 29.25 19.5H19.5V0Z"
+									fill="#A259FF"
+								/>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <!-- <h1 class="text-primary fw-bold m-0">Cyberjhop</h1> -->
-             <img src="img/favicon.ico" alt="" width="100">
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-            </div>
-            <a href="index.html" class="navbar-brand bg-none py-3 px-4 mx-3 d-none d-lg-block">
-                <!-- <h1 class="text-primary fw-bold m-0">Cyberjhop</h1> -->
-                 <img src="img/favicon.ico" alt="" width="100">
-            </a>
-            <div class="navbar-nav me-auto py-0">
-                <a href="#service" class="nav-item nav-link">Services</a>
-                <a href="#project" class="nav-item nav-link">Projects</a>
-                <!-- <a href="#team" class="nav-item nav-link">Team</a> -->
-                <!-- <a href="#testimonial" class="nav-item nav-link">Testimonial</a> -->
-                <!-- <a href="#contact" class="nav-item nav-link">Contact</a> -->
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+								<path
+									d="M19.5 19.5H9.75C4.365 19.5 0 23.865 0 29.25C0 34.635 4.365 39 9.75 39H19.5V19.5Z"
+									fill="#FF7262"
+								/>
 
+								<path
+									d="M9.75 39C4.365 39 0 43.365 0 48.75C0 54.135 4.365 58.5 9.75 58.5C15.135 58.5 19.5 54.135 19.5 48.75C19.5 43.365 15.135 39 9.75 39Z"
+									fill="#0ACF83"
+								/>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">J<span style="color: #E04343;">O</span>F<span style="color: #FFE800;">I</span>L</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Software Engineer, IT Teacher, IT Specialist, Graphic Designer, Video Editor</div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="cv/resume.pdf" class="btn btn-primary py-3 px-4 me-5" download>Download CV</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="img/profile1.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+								<path
+									d="M29.25 39C23.865 39 19.5 43.365 19.5 48.75C19.5 54.135 23.865 58.5 29.25 58.5C34.635 58.5 39 54.135 39 48.75C39 43.365 34.635 39 29.25 39Z"
+									fill="#1ABCFE"
+								/>
+							</svg>
+						</div>
+						<h3>Figma</h3>
+						<p>UI/UX design tool</p>
+					</div>
 
+					<div class="tool-card fade-in-up" style="animation-delay: 0.2s">
+						<div class="tool-icon">
+							<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+								<rect width="128" height="128" rx="24" ry="24" fill="#001E36" />
+								<text
+									x="50%"
+									y="50%"
+									text-anchor="middle"
+									dominant-baseline="central"
+									font-family="Arial, sans-serif"
+									font-size="72"
+									fill="#31A8FF"
+								>
+									Ps
+								</text>
+							</svg>
+						</div>
+						<h3>Photoshop</h3>
+						<p>Image editing tool</p>
+					</div>
 
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
+					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
+						<div class="tool-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<rect x="3" y="3" width="18" height="18" rx="2"></rect>
+								<path d="M9 3v18"></path>
+							</svg>
+						</div>
+						<h3>Capcut</h3>
+						<p>Video editing</p>
+					</div>
 
+					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
+						<div class="tool-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+								></path>
+								<polyline points="14 2 14 8 20 8"></polyline>
+								<line x1="16" y1="13" x2="8" y2="13"></line>
+								<line x1="16" y1="17" x2="8" y2="17"></line>
+								<polyline points="10 9 9 9 8 9"></polyline>
+							</svg>
+						</div>
+						<h3>Canva</h3>
+						<p>Image editing, source</p>
+					</div>
 
-    <!-- About Start -->
-    <div class="container-xxl py-6" id="about">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">7</h1>
-                            <h5 class="mb-0">Years</h5>
-                        </div>
-                        <h3 class="lh-base mb-0">of working experience as a web IT Technician, Designer, Developer</h3>
-                    </div>
-                    <p class="mb-4">Hey there! I'm an IT Specialist and former educator deeply passionate about technology and creativity. With a background in teaching various programming languages, I've empowered countless individuals to excel in the tech realm.
+					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
+						<div class="tool-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<rect x="3" y="3" width="18" height="18" rx="2"></rect>
+								<path d="M9 3v18"></path>
+							</svg>
+						</div>
+						<h3>Clickup</h3>
+						<p>Project management</p>
+					</div>
 
-                        Beyond education, I thrive as a graphic designer, video editor, and web developer, bringing concepts to life through visual storytelling and innovative code. Whether I'm crafting captivating websites, designing compelling graphics, or producing engaging videos, I blend technical expertise with artistic flair.
-                        
-                        Let's connect and collaborate on something amazing!</p>
-                    <!-- <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p> -->
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Service</p>
-                    <!-- <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p> -->
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+					<div class="tool-card fade-in-up" style="animation-delay: 0.6s">
+						<div class="tool-icon">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 100 100"
+								width="100"
+								height="100"
+							>
+								<rect width="100" height="100" fill="#000" />
+								<text
+									x="50%"
+									y="50%"
+									text-anchor="middle"
+									dominant-baseline="central"
+									font-family="Arial, Helvetica, sans-serif"
+									font-size="60"
+									fill="#FFF"
+								>
+									N
+								</text>
+							</svg>
+						</div>
+						<h3>Notion</h3>
+						<p>Documentation</p>
+					</div>
 
+					<div class="tool-card fade-in-up" style="animation-delay: 0.1s">
+						<div class="tool-icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<circle cx="12" cy="12" r="10"></circle>
+								<line x1="2" y1="12" x2="22" y2="12"></line>
+								<path
+									d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+								></path>
+							</svg>
+						</div>
+						<h3>Git & GitHub</h3>
+						<p>Version control</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4">A versatile professional with expertise in IT Industry, combining practical experience with a passion for delivering exceptional results. Skilled in Web Development, Graphic Design and video editing, with a proven ability to adapt to challenges and provide innovative solutions. Dedicated to continuous growth and excellence in every endeavor.</p>
-                    <h3 class="mb-4">Software Development</h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">HTML/CSS</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">PHP</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Javascript</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Laravel</h6>
-                                    <h6 class="font-weight-bold">70%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Wordpress</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Java</h6>
-                                    <h6 class="font-weight-bold">70%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    <h3 class="mb-4">Multimedia</h3>
-                        <br>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Photoshop</h6>
-                                    <h6 class="font-weight-bold">80%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Davinci Resolve</h6>
-                                    <h6 class="font-weight-bold">60%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Canva</h6>
-                                    <h6 class="font-weight-bold">100%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Capcut</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Figma</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
-                        </li>
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Full Stack Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2023 - present</p>
-                                    <h6 class="mb-0">Exocoder Inc</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Teacher</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2021 - 2023</p>
-                                    <h6 class="mb-0">FELLOWSHIP BAPTIST COLLEGE</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>IT Department</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2017 - 2020</p>
-                                    <h6 class="mb-0">FELLOWSHIP BAPTIST COLLEGE</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Magsaha Elementary School</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2021</p>
-                                    <h6 class="mb-0">ADMINISTRATIVE ASSISTANT</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Bachelor of Science in Information Technology</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2015-2019</p>
-                                    <h6 class="mb-0">FELLOWSHIP BAPTIST COLLEGE</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>High School</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2011 - 2015</p>
-                                    <h6 class="mb-0">Binicuil National High School</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Elementary School</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2005 - 2011</p>
-                                    <h6 class="mb-0">Binicuil Elementary School</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Pre School</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2003 - 2005</p>
-                                    <h6 class="mb-0">Sunbeam Kindergarten</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Expertise End -->
+		<!-- Projects Section with Carousel -->
+		<section id="projects" class="projects">
+			<div class="container">
+				<h2 class="section-title fade-in-up">Featured Projects</h2>
+				<p class="section-subtitle">Check out some of my recent work</p>
 
+				<div class="carousel-container">
+					<div class="carousel-wrapper">
+						<div class="carousel-track" id="carouselTrack">
+							<!-- Project 1 -->
+							<div class="project-card">
+								<div class="project-image">
+									<img
+										src="projects/graphic/product showcase/2.png"
+										alt="Project 1"
+									/>
+									<div class="project-overlay">
+										<a href="#" class="project-link">View Project</a>
+									</div>
+								</div>
+								<div class="project-content">
+									<h3>Graphic design or video editing</h3>
+									<p>
+										Let's create high-impact assets that drive your business
+										forward
+									</p>
+									<div class="project-tags">
+										<span class="tag">MetaAds</span>
+										<span class="tag">ProductShowcase</span>
+										<span class="tag">DigitalAdvertising</span>
+										<span class="tag">AdCreative</span>
+										<span class="tag">PerformanceMarketing</span>
+									</div>
+								</div>
+							</div>
 
-    <!-- Service Start -->
-    <div class="container-fluid bg-light my-5 py-6" id="service">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="mailto:cyberjhop@gmail.com?subject=Hire%20Me&body=Hello,%20I%20am%20interested%20in%20hiring%20you.">
-                        Hire Me
-                    </a>
-                </div>
-                
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Graphic Design</h4>
-                            <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
-                            <span>I specialize in creating eye-catching and impactful graphic designs that communicate your brand’s message effectively. From logos and branding to marketing materials and digital assets, I bring creativity and precision to every project. Let’s craft designs that make a lasting impression!</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Video Editing</h4>
-                            <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
-                            <span>I offer expert video editing services to transform your footage into polished, engaging content. Whether for social media, marketing, or personal projects, I provide seamless edits, creative transitions, and high-quality results to make your videos stand out. Let’s bring your vision to life, frame by frame!</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Design</h4>
-                            <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
-                            <span>I provide professional web design services to create visually stunning, user-friendly websites tailored to your needs. With a focus on aesthetics, functionality, and responsive design, I ensure your website not only looks great but delivers an exceptional user experience. Let’s design something amazing together!</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Development Tutor</h4>
-                            <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
-                            <span>I offer personalized web development tutoring to help you master the skills needed to build modern, responsive websites. Whether you're a beginner or looking to enhance your coding expertise, I provide step-by-step guidance in HTML, CSS, JavaScript, and more. Let's unlock your potential and bring your web development goals to life!</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+							<!-- Project 2 -->
+							<div class="project-card">
+								<div class="project-image">
+									<img src="projects\graphic\vsanimezone.png" alt="Project 2" />
+									<div class="project-overlay">
+										<a href="#" class="project-link">View Project</a>
+									</div>
+								</div>
+								<div class="project-content">
+									<h3>Youtube Assistance</h3>
+									<p>
+										I can help you creating content, video editing, thumbnail
+										and shorts
+									</p>
+									<div class="project-tags">
+										<span class="tag">Long form</span>
+										<span class="tag">Short form</span>
+										<span class="tag">thumbnail</span>
+										<span class="tag">content creation trends</span>
+									</div>
+								</div>
+							</div>
 
+							<!-- Project 3 -->
+							<div class="project-card">
+								<div class="project-image">
+									<img src="projects/landing-page/5.png" alt="Project 3" />
+									<div class="project-overlay">
+										<a href="#" class="project-link">View Project</a>
+									</div>
+								</div>
+								<div class="project-content">
+									<h3>Web Development</h3>
+									<p>
+										From landing pages to full-featured websites, I develop
+										clean, modern, and reliable web solutions designed to
+										deliver results.
+									</p>
+									<div class="project-tags">
+										<span class="tag">Vue.js</span>
+										<span class="tag">Laravel</span>
+										<span class="tag">MySQL</span>
+										<span class="tag">Bootstrap</span>
+										<span class="tag">JavaScript</span>
+									</div>
+								</div>
+							</div>
 
-    <!-- Projects Start -->
-    <div class="container-xxl py-6 pt-5 mb-5" id="project">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">Graphic Design</li>
-                        <li class="mx-3" data-filter=".second">Web Development</li>
-                        <li class="mx-3" data-filter=".third">Students</li>
-                        <li class="mx-3" data-filter=".fourth">Video</li>
-                        <!-- <li class="mx-3" data-filter=".second">Video Editing</li>
-                        <li class="mx-3" data-filter=".third">Web Applications</li> -->
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-                <!-- first -->
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/bogo50.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/bogo50.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/hydrotank.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/hydrotank.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/hydrotank master dust control anywhere.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/hydrotank master dust control anywhere.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/hoodie.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/hoodie.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/lipstick.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/lipstick.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/perfume.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/perfume.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/shoe.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/shoe.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/tshirt.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/tshirt.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/1.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/1.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/2.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/2.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/3.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/3.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/4.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/4.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/1.1/5.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/1.1/5.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/graphic-design/16.9/1.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/graphic-design/16.9/1.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/getko-logo.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/getko-logo.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://www.getko.ph" target="_blank"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- tutorials -->
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/web_development_sessions/1.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/web_development_sessions/1.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/web_development_sessions/2.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/web_development_sessions/2.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/web_development_sessions/3.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/web_development_sessions/3.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- VIdeo -->
-                <style>
-                    .video-item video {
-                        width: 100%; /* or any specific width */
-                        height: auto; /* ensures the aspect ratio is maintained */
-                    }
-                </style>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls>
-                            <source src="video/horizontal/h1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls>
-                            <source src="video/horizontal/h2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls>
-                            <source src="video/horizontal/h3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls>
-                            <source src="video/horizontal/h4.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls>
-                            <source src="video/horizontal/h6.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls style="width: 320px; height: 350px;">
-                            <source src="video/vertical/1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls style="width: 320px; height: 350px;">
-                            <source src="video/vertical/2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item fourth">
-                    <div class="video-item">
-                        <video controls style="width: 320px; height: 350px;">
-                            <source src="video/vertical/4.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Projects End -->
-    
+							<!-- Project 4 -->
+							<!-- <div class="project-card">
+								<div class="project-image">
+									<img
+										src="https://via.placeholder.com/800x500/333/FFC001?text=Social+Media+Dashboard"
+										alt="Project 4"
+									/>
+									<div class="project-overlay">
+										<a href="#" class="project-link">View Project</a>
+									</div>
+								</div>
+								<div class="project-content">
+									<h3>Social Media Dashboard</h3>
+									<p>
+										Analytics dashboard for managing multiple social media
+										accounts with scheduling and engagement metrics.
+									</p>
+									<div class="project-tags">
+										<span class="tag">React</span>
+										<span class="tag">Express</span>
+										<span class="tag">PostgreSQL</span>
+										<span class="tag">APIs</span>
+									</div>
+								</div>
+							</div> -->
 
-   
-    <!-- Team Start -->
-   <!--  <div class="container-xxl py-6 pb-5" id="team">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Team Members</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Contact Us</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-1.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-2.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-3.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Team End -->
+							<!-- Project 5 -->
+							<div class="project-card">
+								<div class="project-image">
+									<img src="projects/graphic/aicreations.png" alt="Project 5" />
+									<div class="project-overlay">
+										<a href="#" class="project-link">View Project</a>
+									</div>
+								</div>
+								<div class="project-content">
+									<h3>AI Assistance</h3>
+									<p>
+										I provide AI-driven content creation services that leverage
+										machine learning to help businesses create fast, accurate,
+										and engaging content.
+									</p>
+									<div class="project-tags">
+										<span class="tag">Image to video</span>
+										<span class="tag">Text to image</span>
+										<span class="tag">gemini</span>
+										<span class="tag">chatgpt</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
+					<!-- Carousel Controls -->
+					<button
+						class="carousel-btn carousel-btn-prev"
+						id="prevBtn"
+						aria-label="Previous slide"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<polyline points="15 18 9 12 15 6"></polyline>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-btn-next"
+						id="nextBtn"
+						aria-label="Next slide"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg>
+					</button>
 
-    <!-- Testimonial Start -->
-   <!--  <div class="container-fluid bg-light py-5 my-5" id="testimonial">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Testimonial</h1>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-left h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-1.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-2.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-3.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-right h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
+					<!-- Carousel Indicators -->
+					<div class="carousel-indicators" id="carouselIndicators">
+						<button class="indicator active" data-slide="0"></button>
+						<button class="indicator" data-slide="1"></button>
+						<button class="indicator" data-slide="2"></button>
+						<button class="indicator" data-slide="3"></button>
+					</div>
+				</div>
 
-    <br>
-    <!-- Contact Start -->
-    <div class="container-xxl pb-5" id="contact">
-        <div class="container py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Let's Work Together</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://x.com/jhop_ph">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" width="20" height="20">
-                                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
-                            </svg>
-                            
-                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/standin.jhop"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/exo-jhop-85502b249/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+				<!-- Categorized Work Section -->
+				<div class="categorized-work">
+					<h3 class="subsection-title">All Projects by Category</h3>
 
+					<!-- Category Filters -->
+					<div class="category-filters">
+						<button class="filter-btn active" data-filter="all">All</button>
+						<button class="filter-btn" data-filter="graphic">
+							Graphic Design
+						</button>
+						<button class="filter-btn" data-filter="video">Video</button>
+					</div>
 
-    <!-- Copyright Start -->
-    <div class="container-fluid bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom text-secondary" href="#">cyberjhop</a>, All Right Reserved | 2025
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom text-secondary" href="https://cyberjhop.github.io/">cyberjhop ♥</a> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
+					<!-- Projects Grid -->
+					<div class="projects-grid">
+						<!-- Project 1 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/bogo50.png"
+									alt="bogo50"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Meta ads</h4>
+							</div>
+						</div>
 
+						<!-- Project 2 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/hydrotank master dust control anywhere.png"
+									alt="hydrotank master dust control"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Product Showcase</h4>
+							</div>
+						</div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+						<!-- Project 3 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/hydrotank.png"
+									alt="hydrotank"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Product Showcase</h4>
+							</div>
+						</div>
 
+						<!-- Project 4 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/hoodie.png"
+									alt="hoodie"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Ecommerce</h4>
+							</div>
+						</div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+						<!-- Project 5 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/lipstick.png"
+									alt="lipstick"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Ecommerce</h4>
+							</div>
+						</div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+						<!-- Project 6 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img src="projects/graphic/meta ads 1.1/shoe.png" alt="shoe" />
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Ecommerce</h4>
+							</div>
+						</div>
 
+						<!-- Project 7 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/tshirt.png"
+									alt="tshirt"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Ecommerce</h4>
+							</div>
+						</div>
+
+						<!-- Project 8 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 16.9/limited offer.png"
+									alt="limited offer"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Product Promo Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 9 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/Caviar 1.1.png"
+									alt="Caviar 1.1"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Product Promo Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 10 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/Crowntools Gang Gang - 1x1.png"
+									alt="Crowntools Gang Gang - 1x1"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Product Promo Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 11 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Caviar 9.16 v1.png"
+									alt="Caviar 9.16 v1"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 12 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Caviar 9.16 v2.png"
+									alt="Caviar 9.16 v2"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 13 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Crowntools Gang Gang.png"
+									alt="Crowntools Gang Gang"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 14 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Email Design Caviar Premium Blade.png"
+									alt="Email Design Caviar Premium Blade"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 15 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Email Design Gang Gang Clips.png"
+									alt="Booking System"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 16 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/Crowned Tools.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 17 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/caviar (with bgm).mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 18 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/SquiJig email.png"
+									alt="SquiJig"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 19 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/email/Shakti House Email design v2.png"
+									alt="Shakti House Email design v2"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 20 -->
+						<div class="grid-project-card" data-category="graphic">
+							<div class="grid-project-image">
+								<img
+									src="projects/graphic/meta ads 1.1/Shakti House.png"
+									alt="Shakti House"
+								/>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Graphic Design</span>
+								<h4>Email Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 21 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h1.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads Tutorial</h4>
+							</div>
+						</div>
+
+						<!-- Project 22 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h2.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Long form video</h4>
+							</div>
+						</div>
+
+						<!-- Project 23 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h3.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 24 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h4.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 25 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h5.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>YT shorts/reels</h4>
+							</div>
+						</div>
+
+						<!-- Project 26 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/horizontal/h6.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 27 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/vertical/1.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 28 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/vertical/2.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+
+						<!-- Project 29 -->
+						<div class="grid-project-card" data-category="video">
+							<div class="grid-project-image">
+								<video src="projects/video/vertical/3.mp4"></video>
+								<div class="grid-project-overlay">
+									<div class="overlay-content">
+										<button class="view-image-btn" aria-label="View full image">
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path
+													d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+												></path>
+												<circle cx="12" cy="12" r="3"></circle>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="grid-project-info">
+								<span class="project-category">Video</span>
+								<h4>Video Ads</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<h2 class="section-title fade-in-up">Get In Touch</h2>
+				<p class="section-subtitle">
+					Let's create something amazing together! Reach out and let's discuss
+					your project.
+				</p>
+
+				<div class="contact-content">
+					<div class="contact-info fade-in-up">
+						<!-- Location Card -->
+						<div class="info-item">
+							<div class="info-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+									></path>
+									<circle cx="12" cy="10" r="3"></circle>
+								</svg>
+							</div>
+							<div class="info-text">
+								<h4>Location</h4>
+								<p>Negros Occidental<br />Philippines</p>
+							</div>
+						</div>
+
+						<!-- Email Card -->
+						<div class="info-item">
+							<div class="info-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+									></path>
+									<polyline points="22,6 12,13 2,6"></polyline>
+								</svg>
+							</div>
+							<div class="info-text">
+								<h4>Email</h4>
+								<a href="mailto:cyberjhop@gmail.com">cyberjhop@gmail.com</a>
+							</div>
+						</div>
+
+						<!-- Phone Card -->
+						<div class="info-item">
+							<div class="info-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+									></path>
+								</svg>
+							</div>
+							<div class="info-text">
+								<h4>Phone</h4>
+								<a href="tel:09271348867">0927 134 8867</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Call to Action -->
+					<div class="contact-cta fade-in-up">
+						<h3>Let's connect?</h3>
+						<p>
+							I'm available for freelance work and exciting new projects. Let's
+							collaborate and bring your ideas to life!
+						</p>
+						<div class="cta-buttons">
+							<a href="mailto:cyberjhop@gmail.com" class="cta-btn">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+									></path>
+									<polyline points="22,6 12,13 2,6"></polyline>
+								</svg>
+								Send Email
+							</a>
+							<a
+								href="res/resume/resume.pdf"
+								class="cta-btn cta-btn-secondary"
+								download
+							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Download Resume
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<!-- Footer About -->
+					<div class="footer-section footer-about">
+						<h3 class="footer-logo">Jhop<span class="highlight">.</span></h3>
+						<p>
+							Full Stack Developer passionate about creating elegant digital
+							solutions and beautiful web experiences.
+						</p>
+						<div class="footer-social">
+							<a
+								href="https://github.com/yourusername"
+								class="footer-social-link"
+								aria-label="GitHub"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/exo-jhop-85502b249/"
+								class="footer-social-link"
+								aria-label="LinkedIn"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://x.com/jhop_ph"
+								class="footer-social-link"
+								aria-label="Twitter"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://www.instagram.com/cyberjhop06/"
+								class="footer-social-link"
+								aria-label="Instagram"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<!-- Footer Quick Links -->
+					<div class="footer-section">
+						<h4>Quick Links</h4>
+						<ul class="footer-links">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#tools">Tools</a></li>
+						</ul>
+					</div>
+
+					<!-- Footer Projects -->
+					<div class="footer-section">
+						<h4>Explore</h4>
+						<ul class="footer-links">
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="res/resume/resume.pdf">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Footer Bottom -->
+				<div class="footer-bottom">
+					<div class="footer-divider"></div>
+					<div class="footer-bottom-content">
+						<p>&copy; 2025 Jhop. All rights reserved.</p>
+						<p>Crafted with <span class="highlight">LOVE ♥</span></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="res/js/main.js"></script>
+	</body>
 </html>
