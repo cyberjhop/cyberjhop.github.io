@@ -412,19 +412,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			const projectCard = button.closest(".project-card");
 			const image = projectCard.querySelector(".project-image img");
+			const video = projectCard.querySelector(".project-image video"); // ✅ Also look for video
 			const projectTitle = projectCard.querySelector(".project-content h3");
 
 			console.log("Carousel project card:", projectCard);
 			console.log("Image found:", !!image);
+			console.log("Video found:", !!video); // ✅ Log video
 
-			if (image) {
+			// Get existing lightbox elements
+			const lightbox = document.getElementById("lightbox");
+			const lightboxImage = document.getElementById("lightboxImage");
+			const lightboxVideo = document.getElementById("lightboxVideo");
+			const lightboxInfo = document.getElementById("lightboxInfo");
+
+			// Check if it's a video or image
+			if (video) {
+				// ✅ Handle video
+				console.log("📹 Opening carousel video:", video.src);
+
+				// Hide image, show video
+				lightboxImage.style.display = "none";
+				lightboxVideo.style.display = "block";
+
+				// Set video source
+				lightboxVideo.querySelector("source").src = video.src;
+				lightboxVideo.load(); // Important: reload the video
+
+				// Set title
+				if (projectTitle) {
+					lightboxInfo.querySelector("h4").textContent =
+						projectTitle.textContent;
+				}
+
+				// Show lightbox
+				lightbox.classList.add("active");
+				document.body.style.overflow = "hidden";
+
+				console.log("📹 Carousel video lightbox opened!");
+			} else if (image) {
+				// ✅ Handle image
 				console.log("📷 Opening carousel image:", image.src);
-
-				// Get existing lightbox elements
-				const lightbox = document.getElementById("lightbox");
-				const lightboxImage = document.getElementById("lightboxImage");
-				const lightboxVideo = document.getElementById("lightboxVideo");
-				const lightboxInfo = document.getElementById("lightboxInfo");
 
 				// Hide video, show image
 				lightboxVideo.style.display = "none";
@@ -444,9 +471,9 @@ document.addEventListener("DOMContentLoaded", function () {
 				lightbox.classList.add("active");
 				document.body.style.overflow = "hidden";
 
-				console.log("📷 Carousel lightbox opened!");
+				console.log("📷 Carousel image lightbox opened!");
 			} else {
-				console.error("❌ No image found in carousel!");
+				console.error("❌ No image or video found in carousel!");
 			}
 		});
 	});
