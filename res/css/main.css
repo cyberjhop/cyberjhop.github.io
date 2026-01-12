@@ -1833,3 +1833,9 @@ section {
 .lightbox-video::-webkit-media-controls-volume-slider {
     filter: brightness(0) saturate(100%) invert(75%) sepia(91%) saturate(1058%) hue-rotate(358deg) brightness(102%) contrast(101%);
 }
+
+.tool-icon svg,
+.tool-icon img {
+    width: 32px;
+    height: 32px;
+}
