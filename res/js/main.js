@@ -263,6 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				<source src="" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
+			<iframe class="lightbox-iframe" id="lightboxIframe" style="display: none;" allow="autoplay"></iframe>
 			<div class="lightbox-info" id="lightboxInfo">
 				<h4></h4>
 			</div>
@@ -275,6 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const lightbox = document.getElementById("lightbox");
 	const lightboxImage = document.getElementById("lightboxImage");
 	const lightboxVideo = document.getElementById("lightboxVideo");
+	const lightboxIframe = document.getElementById("lightboxIframe");
 	const lightboxClose = document.getElementById("lightboxClose");
 	const lightboxInfo = document.getElementById("lightboxInfo");
 
@@ -291,71 +293,61 @@ document.addEventListener("DOMContentLoaded", function () {
 	console.log("✅ Found", viewButtons.length, "view buttons");
 
 	// Add click event to each button
+	// Add click event to each button
 	viewButtons.forEach((button, index) => {
-		console.log(`Adding listener to button ${index + 1}`);
 		button.addEventListener("click", function (e) {
-			console.log("🖱️ Button clicked!");
 			e.preventDefault();
 			e.stopPropagation();
 
 			const projectCard = button.closest(".grid-project-card");
 			const image = projectCard.querySelector(".grid-project-image img");
 			const video = projectCard.querySelector(".grid-project-image video");
+			const iframe = projectCard.querySelector(".grid-project-image iframe"); // New selector
 			const projectTitle = projectCard.querySelector(".grid-project-info h4");
 
-			console.log("Project card:", projectCard);
-			console.log("Image found:", !!image);
-			console.log("Video found:", !!video);
+			// RESET: Hide everything first
+			lightboxImage.style.display = "none";
+			lightboxVideo.style.display = "none";
+			lightboxIframe.style.display = "none";
 
-			// Check if it's a video or image
-			if (video) {
-				// It's a video
-				console.log("📹 Opening video:", video.src);
+			// 1. Handle Google Drive / Iframe
+			if (iframe) {
+				lightboxIframe.style.display = "block";
+				lightboxIframe.src = iframe.src; // Keep the /preview link
 
-				// Hide image, show video
-				lightboxImage.style.display = "none";
+				if (projectTitle) {
+					lightboxInfo.querySelector("h4").textContent =
+						projectTitle.textContent;
+				}
+				lightbox.classList.add("active");
+				document.body.style.overflow = "hidden";
+			}
+			// 2. Handle Local Video
+			else if (video) {
 				lightboxVideo.style.display = "block";
+				const videoSource = lightboxVideo.querySelector("source");
+				videoSource.src = video.src;
+				lightboxVideo.load();
+				lightboxVideo.play();
 
-				// Set video source
-				lightboxVideo.querySelector("source").src = video.src;
-				lightboxVideo.load(); // Important: reload the video
-
-				// Set title
 				if (projectTitle) {
 					lightboxInfo.querySelector("h4").textContent =
 						projectTitle.textContent;
 				}
-
-				// Show lightbox
 				lightbox.classList.add("active");
 				document.body.style.overflow = "hidden";
-
-				console.log("📹 Video lightbox opened!");
-			} else if (image) {
-				// It's an image
-				console.log("📷 Opening image:", image.src);
-
-				// Hide video, show image
-				lightboxVideo.style.display = "none";
+			}
+			// 3. Handle Images
+			else if (image) {
 				lightboxImage.style.display = "block";
-
-				// Set image source
 				lightboxImage.src = image.src;
-				lightboxImage.alt = image.alt || "";
 
-				// Set title
 				if (projectTitle) {
 					lightboxInfo.querySelector("h4").textContent =
 						projectTitle.textContent;
 				}
-
-				// Show lightbox
 				lightbox.classList.add("active");
 				document.body.style.overflow = "hidden";
-
-				console.log("📷 Image lightbox opened!");
-			} else {
-				console.error("❌ No image or video found!");
 			}
 		});
 	});
@@ -365,13 +357,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		lightbox.classList.remove("active");
 		document.body.style.overflow = "";
 
-		// Pause and reset video if it was playing
+		// 1. Pause and reset local video if it was playing
 		if (lightboxVideo) {
 			lightboxVideo.pause();
 			lightboxVideo.currentTime = 0;
 		}
 
-		console.log("🔒 Lightbox closed");
+		// 2. STOP the Google Drive iframe video
+		// Setting the src to an empty string kills the process immediately
+		if (lightboxIframe) {
+			lightboxIframe.src = "";
+		}
+
+		console.log("🔒 Lightbox closed and media stopped");
 	}
 
 	if (lightboxClose) {
@@ -435,8 +433,18 @@ document.addEventListener("DOMContentLoaded", function () {
 				lightboxVideo.style.display = "block";
 
 				// Set video source
-				lightboxVideo.querySelector("source").src = video.src;
-				lightboxVideo.load(); // Important: reload the video
+				const videoSource = lightboxVideo.querySelector("source");
+				videoSource.src = video.src;
+				lightboxVideo.load();
+
+				// ✅ AUTOPLAY the video after it loads
+				lightboxVideo.addEventListener(
+					"loadeddata",
+					function () {
+						lightboxVideo.play();
+					},
+					{ once: true }
+				);
 
 				// Set title
 				if (projectTitle) {

@@ -1839,3 +1839,9 @@ section {
     width: 32px;
     height: 32px;
 }
+
+.lightbox-iframe {
+    width: 80vw;
+    height: 80vh;
+    border: none;
+}
