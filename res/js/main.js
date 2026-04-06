@@ -62,38 +62,198 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-	// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-	const observerOptions = {
-		threshold: 0.1,
-		rootMargin: "0px 0px -50px 0px",
-	};
+	// ===== SCROLL PROGRESS BAR =====
+	const scrollProgressBar = document.createElement('div');
+	scrollProgressBar.id = 'scroll-progress';
+	document.body.appendChild(scrollProgressBar);
+	window.addEventListener('scroll', () => {
+		const scrolled = window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+		scrollProgressBar.style.width = (scrolled * 100) + '%';
+	}, { passive: true });
 
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.style.opacity = "1";
-				entry.target.style.transform = "translateY(0)";
+	// ===== GSAP SCROLL REVEAL ANIMATIONS =====
+	// Skip all motion for users who prefer reduced motion
+	if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+	gsap.registerPlugin(ScrollTrigger);
 
-				// Animate skill bars
-				if (entry.target.classList.contains("skill-card")) {
-					const progressBar = entry.target.querySelector(".skill-progress");
-					const progress = progressBar.getAttribute("data-progress");
-					setTimeout(() => {
-						progressBar.style.width = progress + "%";
-					}, 200);
+	ScrollTrigger.defaults({
+		start: "top 88%",
+		toggleActions: "play none none none",
+	});
+
+	// Section headings — word-by-word reveal scrubbed to scroll
+	gsap.utils.toArray(".section-title").forEach((el) => {
+		const words = el.textContent.trim().split(/\s+/);
+		el.innerHTML = words.map(w => `<span class="word-reveal">${w}</span>`).join('');
+		const wordSpans = el.querySelectorAll('.word-reveal');
+		gsap.fromTo(wordSpans,
+			{ opacity: 0.1 },
+			{
+				opacity: 1,
+				stagger: 0.08,
+				ease: "none",
+				scrollTrigger: {
+					trigger: el,
+					start: "top 85%",
+					end: "top 45%",
+					scrub: 1,
 				}
+			}
+		);
+	});
 
-				observer.unobserve(entry.target);
+	// About section
+	gsap.from(".about-text", {
+		scrollTrigger: ".about-text",
+		opacity: 0,
+		y: 20,
+		duration: 0.8,
+		ease: "power2.out",
+		delay: 0.15,
+	});
+	gsap.from(".about-highlights li", {
+		scrollTrigger: ".about-highlights",
+		opacity: 0,
+		y: 20,
+		duration: 0.6,
+		ease: "power2.out",
+		stagger: 0.1,
+	});
+	// about-stats stat-items: no fade-in — counter animation handles the entrance effect
+
+	// Skill cards — individual self-triggers (stagger via delay)
+	gsap.utils.toArray(".skill-card").forEach((card, i) => {
+		gsap.from(card, {
+			scrollTrigger: { trigger: card, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.7,
+			ease: "power2.out",
+			delay: i * 0.1,
+		});
+	});
+
+	// Skill progress bars — animate width via ScrollTrigger
+	document.querySelectorAll(".skill-card").forEach((card) => {
+		const bar = card.querySelector(".skill-progress");
+		if (!bar) return;
+		const target = bar.getAttribute("data-progress");
+		gsap.fromTo(
+			bar,
+			{ width: "0%" },
+			{
+				width: target + "%",
+				duration: 1.1,
+				ease: "power2.out",
+				scrollTrigger: {
+					trigger: card,
+					start: "top 85%",
+				},
+			}
+		);
+	});
+
+	// Tool cards — individual self-triggers
+	gsap.utils.toArray(".tool-card").forEach((card, i) => {
+		gsap.from(card, {
+			scrollTrigger: { trigger: card, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.65,
+			ease: "power2.out",
+			delay: i * 0.07,
+		});
+	});
+
+	// Project grid cards — batch visible cards together, no accumulated delay
+	ScrollTrigger.batch(".grid-project-card", {
+		start: "top 92%",
+		onEnter: (batch) => gsap.from(batch, {
+			opacity: 0,
+			y: 20,
+			duration: 0.45,
+			ease: "power2.out",
+			stagger: 0.05,
+		}),
+	});
+
+	// Contact info items — individual self-triggers
+	gsap.utils.toArray(".info-item").forEach((item, i) => {
+		gsap.from(item, {
+			scrollTrigger: { trigger: item, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.65,
+			ease: "power2.out",
+			delay: i * 0.12,
+		});
+	});
+	gsap.from(".contact-form-wrap", {
+		scrollTrigger: ".contact-form-wrap",
+		opacity: 0,
+		y: 20,
+		duration: 0.8,
+		ease: "power2.out",
+	});
+	gsap.from(".contact-cta", {
+		scrollTrigger: ".contact-cta",
+		opacity: 0,
+		y: 20,
+		duration: 0.7,
+		ease: "power2.out",
+	});
+	// ===== HERO PARALLAX SCRUB =====
+	// Hero content lifts as you scroll away (no opacity — avoids blank on scroll-back)
+	gsap.to(".hero-content", {
+		y: -60,
+		ease: "none",
+		scrollTrigger: {
+			trigger: "#home",
+			start: "top top",
+			end: "bottom top",
+			scrub: 1,
+		}
+	});
+
+	// ===== ABOUT IMAGE PARALLAX =====
+	// Image drifts slightly slower than surrounding text
+	gsap.to(".about-image", {
+		y: -30,
+		ease: "none",
+		scrollTrigger: {
+			trigger: "#about",
+			start: "top bottom",
+			end: "bottom top",
+			scrub: 1,
+		}
+	});
+
+	// ===== STATS COUNT-UP =====
+	function animateCounter(el) {
+		const text = el.textContent.trim();
+		const match = text.match(/^(\d+)(.*)$/);
+		if (!match) return; // Skip non-numeric values like "3-in-1"
+		const target = parseInt(match[1]);
+		const suffix = match[2];
+		const obj = { val: 0 };
+		gsap.to(obj, {
+			val: target,
+			duration: 1.5,
+			ease: "power2.out",
+			onUpdate() {
+				el.textContent = Math.round(obj.val) + suffix;
+			},
+			scrollTrigger: {
+				trigger: el,
+				start: "top 85%",
+				toggleActions: "play none none none",
 			}
 		});
-	}, observerOptions);
+	}
+	document.querySelectorAll('.hero-stat strong').forEach(animateCounter);
+	document.querySelectorAll('.stat-number').forEach(animateCounter);
 
-	// Observe all animated elements
-	document
-		.querySelectorAll(".fade-in-up, .fade-in-left, .fade-in-right, .skill-card")
-		.forEach((el) => {
-			observer.observe(el);
-		});
+	} // end prefers-reduced-motion check
 
 	// ===== CAROUSEL =====
 	const track = document.getElementById("carouselTrack");
@@ -485,4 +645,75 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	});
+
+	// ===== BACK TO TOP =====
+	const backToTopBtn = document.getElementById('backToTop');
+	if (backToTopBtn) {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) {
+				backToTopBtn.classList.add('visible');
+			} else {
+				backToTopBtn.classList.remove('visible');
+			}
+		});
+		backToTopBtn.addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	}
 });
+
+// ===== CUSTOM CURSOR =====
+(function () {
+	const dot = document.createElement('div');
+	const ring = document.createElement('div');
+	dot.className = 'cursor-dot';
+	ring.className = 'cursor-ring';
+	document.body.appendChild(dot);
+	document.body.appendChild(ring);
+
+	let ringX = 0, ringY = 0;
+	let dotX = 0, dotY = 0;
+	let raf;
+
+	document.addEventListener('mousemove', (e) => {
+		dotX = e.clientX;
+		dotY = e.clientY;
+		dot.style.left = dotX + 'px';
+		dot.style.top = dotY + 'px';
+	});
+
+	function animateRing() {
+		ringX += (dotX - ringX) * 0.12;
+		ringY += (dotY - ringY) * 0.12;
+		ring.style.left = ringX + 'px';
+		ring.style.top = ringY + 'px';
+		raf = requestAnimationFrame(animateRing);
+	}
+	animateRing();
+
+	const hoverTargets = 'a, button, [data-filter], .project-card, label, input, textarea, select, [role="button"]';
+
+	document.addEventListener('mouseover', (e) => {
+		if (e.target.closest(hoverTargets)) {
+			dot.classList.add('hovering');
+			ring.classList.add('hovering');
+		}
+	});
+
+	document.addEventListener('mouseout', (e) => {
+		if (e.target.closest(hoverTargets)) {
+			dot.classList.remove('hovering');
+			ring.classList.remove('hovering');
+		}
+	});
+
+	document.addEventListener('mouseleave', () => {
+		dot.style.opacity = '0';
+		ring.style.opacity = '0';
+	});
+
+	document.addEventListener('mouseenter', () => {
+		dot.style.opacity = '1';
+		ring.style.opacity = '0.6';
+	});
+}());

@@ -4,6 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Jhop - Portfolio</title>
+		<meta name="description" content="Jhop — Full Stack Developer, Graphic Designer & Video Editor based in the Philippines. Available for freelance work." />
+		<meta property="og:title" content="Jhop — Full Stack Developer · Designer · Video Editor" />
+		<meta property="og:description" content="I build high-converting digital experiences — from responsive web apps and branded graphics to polished video ads." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://cyberjhop.github.io" />
+		<meta property="og:image" content="https://cyberjhop.github.io/img/og-image.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23FFC001'/><text x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='20' fill='%230a0a0a'>J</text></svg>" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="res/css/main.css" />
 	</head>
 	<body>
@@ -18,6 +29,11 @@
 					<li><a href="#tools" class="nav-link">Tools</a></li>
 					<li><a href="#projects" class="nav-link">Projects</a></li>
 					<li><a href="#contact" class="nav-link">Contact</a></li>
+					<li class="nav-social-item">
+						<a href="https://www.linkedin.com/in/jofil-consulta-85502b249/" class="nav-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+						</a>
+					</li>
 				</ul>
 				<div class="hamburger">
 					<span></span>
@@ -29,28 +45,65 @@
 
 		<!-- Hero Section -->
 		<section id="home" class="hero">
+			<!-- Background orbs -->
+			<div class="hero-orb hero-orb-1"></div>
+			<div class="hero-orb hero-orb-2"></div>
+
 			<div class="container">
 				<div class="hero-content fade-in">
+					<!-- Greeting pill -->
+					<div class="hero-greeting">
+						<span class="hero-greeting-wave">👋</span> Available for freelance work
+					</div>
+
 					<h1 class="hero-title">
 						Hi, I'm <span class="highlight">Jhop</span>
 					</h1>
-					<p class="hero-subtitle">
-						Full Stack Developer • Designer • Video Editor for High-Converting
-						Digital Experiences
-					</p>
+
+					<!-- Cycling role subtitle -->
+					<div class="hero-roles">
+						<span class="role-prefix">I'm a&nbsp;</span>
+						<div class="role-cycle">
+							<span>Full Stack Developer</span>
+							<span>Graphic Designer</span>
+							<span>Video Editor</span>
+						</div>
+					</div>
+
 					<p class="hero-description">
-						I build elegant digital solutions that combine functionality with
-						beautiful design. Passionate about creating experiences that make a
-						difference.
+						I build high-converting digital experiences — from responsive web apps
+						and branded graphics to polished video ads.
 					</p>
+
 					<div class="hero-buttons">
-						<a href="#projects" class="btn btn-primary">View My Work</a>
+						<a href="#projects" class="btn btn-primary">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+							View My Work
+						</a>
 						<a href="#contact" class="btn btn-secondary">Get In Touch</a>
+					</div>
+
+					<!-- Quick stats -->
+					<div class="hero-stats">
+						<div class="hero-stat">
+							<strong>7+</strong>
+							<span>Years Exp.</span>
+						</div>
+						<div class="hero-stat-sep"></div>
+						<div class="hero-stat">
+							<strong>20+</strong>
+							<span>Projects</span>
+						</div>
+						<div class="hero-stat-sep"></div>
+						<div class="hero-stat">
+							<strong>3-in-1</strong>
+							<span>Skill Set</span>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="hero-scroll">
-				<span>Scroll Down</span>
+				<span>Scroll</span>
 				<div class="scroll-indicator"></div>
 			</div>
 		</section>
@@ -63,43 +116,57 @@
 					<div class="about-image fade-in-left">
 						<img src="img/profile.png" alt="Profile Photo" />
 						<div class="image-border"></div>
+						<div class="availability-badge">
+							<span class="availability-dot"></span>
+							Available for work
+						</div>
 					</div>
 					<div class="about-text fade-in-right">
-						<h3>Hello! I'm a passionate developer</h3>
+						<h3>IT Specialist · Developer · Creative</h3>
 						<p>
-							With over 7 years of experience in the tech and creative space, I
-							help bring ideas to life using a combination of modern tools,
-							clean workflows, and creative execution. I’m an IT Specialist and
-							former educator with a strong foundation in technology, having
-							taught programming and guided individuals in building real,
-							practical skills.
+							With over <strong>7 years</strong> in the tech and creative space, I help businesses and creators bring ideas to life — from clean, modern websites to high-converting ads and polished video content. I’m a former educator and IT specialist with a solid foundation in both the technical and visual sides of digital work.
 						</p>
+						<ul class="about-highlights">
+							<li>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+								Responsive web development with Vue.js, Laravel &amp; PHP
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+								Graphic design — Meta ads, email campaigns, product showcases
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+								Video editing — long-form, shorts, UGC &amp; ad creative
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+								Workflow automation with n8n, Make &amp; Zapier
+							</li>
+						</ul>
 						<p>
-							My work goes beyond development. I create responsive websites,
-							design compelling graphics, produce engaging videos, and craft
-							creative ads that connect with audiences. I’m comfortable working
-							across a wide range of tools and platforms in today’s digital
-							market, allowing me to adapt quickly and deliver solutions that
-							are both functional and visually impactful.
-						</p>
-						<p>
-							I believe in continuous learning, efficiency, and
-							creativity—whether that’s exploring new tools, refining design
-							trends, or improving digital experiences. When I’m not working,
-							you’ll likely find me experimenting with new creative ideas or
-							enjoying a good cup of coffee. Let’s collaborate and build
-							something meaningful.
+							I work across multiple disciplines so you get a single, reliable collaborator for your digital needs — no juggling multiple freelancers.
 						</p>
 						<div class="about-stats">
 							<div class="stat-item">
-								<span class="stat-number">Passionn</span>
+								<span class="stat-number">7+</span>
+								<span class="stat-label">Years Experience</span>
 							</div>
 							<div class="stat-item">
-								<span class="stat-number">Client Satisfaction</span>
+								<span class="stat-number">20+</span>
+								<span class="stat-label">Projects Delivered</span>
 							</div>
 							<div class="stat-item">
-								<span class="stat-number">Continuous Growth</span>
+								<span class="stat-number">3-in-1</span>
+								<span class="stat-label">Dev · Design · Video</span>
 							</div>
+						</div>
+						<div class="about-cta">
+							<a href="res/resume/resume.pdf" class="btn btn-primary" download>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+								Download Resume
+							</a>
+							<a href="#contact" class="btn btn-secondary">Let’s Work Together</a>
 						</div>
 					</div>
 				</div>
@@ -110,6 +177,7 @@
 		<section id="skills" class="skills">
 			<div class="container">
 				<h2 class="section-title fade-in-up">My Skillset</h2>
+				<p class="section-subtitle fade-in-up">Technologies and tools I've built real projects with</p>
 				<div class="skills-grid">
 					<div class="skill-card fade-in-up">
 						<div class="skill-icon">
@@ -124,13 +192,28 @@
 							</svg>
 						</div>
 						<h3>Web Development</h3>
-						<div class="skill-bar">
-							<div class="skill-progress" data-progress="90"></div>
+						<span class="skill-level">Expert</span>
+						<div class="skill-bar-container">
+							<div class="skill-bar-header">
+								<span class="skill-bar-label">Proficiency</span>
+								<span class="skill-progress-label">90%</span>
+							</div>
+							<div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Web Development proficiency">
+								<div class="skill-progress" data-progress="90"></div>
+							</div>
 						</div>
-						<p>HTML, CSS, JavaScript, Vue.js, Bootstrap, Laravel, PHP</p>
+						<div class="skill-tags">
+							<span class="skill-tag">HTML</span>
+							<span class="skill-tag">CSS</span>
+							<span class="skill-tag">JavaScript</span>
+							<span class="skill-tag">Vue.js</span>
+							<span class="skill-tag">Bootstrap</span>
+							<span class="skill-tag">Laravel</span>
+							<span class="skill-tag">PHP</span>
+						</div>
 					</div>
 
-					<div class="skill-card fade-in-up" style="animation-delay: 0.4s">
+					<div class="skill-card fade-in-up" style="animation-delay: 0.2s">
 						<div class="skill-icon">
 							<svg
 								viewBox="0 0 24 24"
@@ -144,13 +227,24 @@
 							</svg>
 						</div>
 						<h3>Multimedia</h3>
-						<div class="skill-bar">
-							<div class="skill-progress" data-progress="85"></div>
+						<span class="skill-level">Advanced</span>
+						<div class="skill-bar-container">
+							<div class="skill-bar-header">
+								<span class="skill-bar-label">Proficiency</span>
+								<span class="skill-progress-label">85%</span>
+							</div>
+							<div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Multimedia proficiency">
+								<div class="skill-progress" data-progress="85"></div>
+							</div>
 						</div>
-						<p>Graphic design, Video editing, Image manipulation</p>
+						<div class="skill-tags">
+							<span class="skill-tag">Graphic Design</span>
+							<span class="skill-tag">Video Editing</span>
+							<span class="skill-tag">Image Manipulation</span>
+						</div>
 					</div>
 
-					<div class="skill-card fade-in-up" style="animation-delay: 0.2s">
+					<div class="skill-card fade-in-up" style="animation-delay: 0.4s">
 						<div class="skill-icon">
 							<svg
 								viewBox="0 0 24 24"
@@ -164,10 +258,79 @@
 							</svg>
 						</div>
 						<h3>Automations</h3>
-						<div class="skill-bar">
-							<div class="skill-progress" data-progress="80"></div>
+						<span class="skill-level">Proficient</span>
+						<div class="skill-bar-container">
+							<div class="skill-bar-header">
+								<span class="skill-bar-label">Proficiency</span>
+								<span class="skill-progress-label">80%</span>
+							</div>
+							<div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Automations proficiency">
+								<div class="skill-progress" data-progress="80"></div>
+							</div>
 						</div>
-						<p>n8n, make, zapier</p>
+						<div class="skill-tags">
+							<span class="skill-tag">n8n</span>
+							<span class="skill-tag">Make</span>
+							<span class="skill-tag">Zapier</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Values Section -->
+		<section id="values" class="testimonials">
+			<div class="container">
+				<h2 class="section-title fade-in-up">What I Bring to Every Project</h2>
+				<p class="section-subtitle">The principles behind every pixel, line of code, and cut</p>
+
+				<div class="values-grid">
+					<div class="value-card fade-in-up">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+						</div>
+						<h3 class="value-title">Purposeful Design</h3>
+						<p class="value-desc">Every visual decision has a reason — whether it's a layout, a color, or a cut. I design with intent, not decoration.</p>
+					</div>
+
+					<div class="value-card fade-in-up" style="animation-delay: 0.1s">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+						</div>
+						<h3 class="value-title">Clean Execution</h3>
+						<p class="value-desc">From code structure to video timelines, I keep things organized and maintainable — not just functional on the surface.</p>
+					</div>
+
+					<div class="value-card fade-in-up" style="animation-delay: 0.2s">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+						</div>
+						<h3 class="value-title">Reliable Delivery</h3>
+						<p class="value-desc">Deadlines aren't suggestions. I communicate early if something shifts and make sure deliverables land when they're expected.</p>
+					</div>
+
+					<div class="value-card fade-in-up" style="animation-delay: 0.3s">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+						</div>
+						<h3 class="value-title">Brand Alignment</h3>
+						<p class="value-desc">I take time to understand who you're talking to. The work should feel like you — not like a generic template.</p>
+					</div>
+
+					<div class="value-card fade-in-up" style="animation-delay: 0.4s">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+						</div>
+						<h3 class="value-title">Multi-Discipline Edge</h3>
+						<p class="value-desc">Design, development, and video under one roof means fewer handoffs, more consistency, and a unified creative vision.</p>
+					</div>
+
+					<div class="value-card fade-in-up" style="animation-delay: 0.5s">
+						<div class="value-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+						</div>
+						<h3 class="value-title">Attention to Detail</h3>
+						<p class="value-desc">The small things matter — spacing, transitions, sound design, hover states. I sweat the details so the final output feels polished.</p>
 					</div>
 				</div>
 			</div>
@@ -179,189 +342,138 @@
 				<h2 class="section-title fade-in-up">Tools & Technologies</h2>
 				<p class="section-subtitle">The toolkit I use to bring ideas to life</p>
 
-				<div class="tools-grid">
-					<div class="tool-card fade-in-up">
-						<div class="tool-icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-								<path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-							</svg>
+				<div class="tools-groups">
+
+					<!-- Group: Development -->
+					<div class="tool-group">
+						<span class="tool-group-label">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+							Development
+						</span>
+						<div class="tools-grid">
+							<div class="tool-card fade-in-up">
+								<div class="tool-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+										<path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+									</svg>
+								</div>
+								<h3>VS Code</h3>
+								<p>Full-stack editing, extensions & debugging</p>
+							</div>
+
+							<div class="tool-card fade-in-up" style="animation-delay: 0.15s">
+								<div class="tool-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<circle cx="12" cy="12" r="10"></circle>
+										<line x1="2" y1="12" x2="22" y2="12"></line>
+										<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+									</svg>
+								</div>
+								<h3>Git & GitHub</h3>
+								<p>Version control & open-source collaboration</p>
+							</div>
 						</div>
-						<h3>VS Code</h3>
-						<p>Primary code editor</p>
 					</div>
 
-					<div class="tool-card fade-in-up" style="animation-delay: 0.2s">
-						<div class="tool-icon">
-							<svg
-								width="39"
-								height="57"
-								viewBox="0 0 39 57"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M19.5 0H9.75C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5H19.5V0Z"
-									fill="#F24E1E"
-								/>
+					<!-- Group: Design -->
+					<div class="tool-group">
+						<span class="tool-group-label">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+							Design
+						</span>
+						<div class="tools-grid">
+							<div class="tool-card fade-in-up">
+								<div class="tool-icon">
+									<svg width="39" height="57" viewBox="0 0 39 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.5 0H9.75C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5H19.5V0Z" fill="#F24E1E"/>
+										<path d="M19.5 0H29.25C34.635 0 39 4.365 39 9.75C39 15.135 34.635 19.5 29.25 19.5H19.5V0Z" fill="#A259FF"/>
+										<path d="M19.5 19.5H9.75C4.365 19.5 0 23.865 0 29.25C0 34.635 4.365 39 9.75 39H19.5V19.5Z" fill="#FF7262"/>
+										<path d="M9.75 39C4.365 39 0 43.365 0 48.75C0 54.135 4.365 58.5 9.75 58.5C15.135 58.5 19.5 54.135 19.5 48.75C19.5 43.365 15.135 39 9.75 39Z" fill="#0ACF83"/>
+										<path d="M29.25 39C23.865 39 19.5 43.365 19.5 48.75C19.5 54.135 23.865 58.5 29.25 58.5C34.635 58.5 39 54.135 39 48.75C39 43.365 34.635 39 29.25 39Z" fill="#1ABCFE"/>
+									</svg>
+								</div>
+								<h3>Figma</h3>
+								<p>UI/UX design, prototyping & wireframing</p>
+							</div>
 
-								<path
-									d="M19.5 0H29.25C34.635 0 39 4.365 39 9.75C39 15.135 34.635 19.5 29.25 19.5H19.5V0Z"
-									fill="#A259FF"
-								/>
+							<div class="tool-card fade-in-up" style="animation-delay: 0.15s">
+								<div class="tool-icon">
+									<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+										<rect width="128" height="128" rx="24" ry="24" fill="#001E36"/>
+										<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="72" fill="#31A8FF">Ps</text>
+									</svg>
+								</div>
+								<h3>Photoshop</h3>
+								<p>Photo editing & graphic compositing</p>
+							</div>
 
-								<path
-									d="M19.5 19.5H9.75C4.365 19.5 0 23.865 0 29.25C0 34.635 4.365 39 9.75 39H19.5V19.5Z"
-									fill="#FF7262"
-								/>
-
-								<path
-									d="M9.75 39C4.365 39 0 43.365 0 48.75C0 54.135 4.365 58.5 9.75 58.5C15.135 58.5 19.5 54.135 19.5 48.75C19.5 43.365 15.135 39 9.75 39Z"
-									fill="#0ACF83"
-								/>
-
-								<path
-									d="M29.25 39C23.865 39 19.5 43.365 19.5 48.75C19.5 54.135 23.865 58.5 29.25 58.5C34.635 58.5 39 54.135 39 48.75C39 43.365 34.635 39 29.25 39Z"
-									fill="#1ABCFE"
-								/>
-							</svg>
+							<div class="tool-card fade-in-up" style="animation-delay: 0.3s">
+								<div class="tool-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M2 13.5V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.5"></path>
+										<path d="M12 3v13"></path>
+										<path d="M8 7l4-4 4 4"></path>
+										<path d="M8 12H5a2 2 0 0 0-2 2v1"></path>
+										<path d="M16 12h3a2 2 0 0 1 2 2v1"></path>
+									</svg>
+								</div>
+								<h3>Canva</h3>
+								<p>Rapid social & print design at scale</p>
+							</div>
 						</div>
-						<h3>Figma</h3>
-						<p>UI/UX design tool</p>
 					</div>
 
-					<div class="tool-card fade-in-up" style="animation-delay: 0.2s">
-						<div class="tool-icon">
-							<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-								<rect width="128" height="128" rx="24" ry="24" fill="#001E36" />
-								<text
-									x="50%"
-									y="50%"
-									text-anchor="middle"
-									dominant-baseline="central"
-									font-family="Arial, sans-serif"
-									font-size="72"
-									fill="#31A8FF"
-								>
-									Ps
-								</text>
-							</svg>
+					<!-- Group: Video & Workflow -->
+					<div class="tool-group">
+						<span class="tool-group-label">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+							Video & Workflow
+						</span>
+						<div class="tools-grid">
+							<div class="tool-card fade-in-up">
+								<div class="tool-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+										<circle cx="12" cy="13" r="3"></circle>
+									</svg>
+								</div>
+								<h3>CapCut</h3>
+								<p>Short-form & long-form video editing</p>
+							</div>
+
+							<div class="tool-card fade-in-up" style="animation-delay: 0.15s">
+								<div class="tool-icon">
+									<img src="projects/logo/slack-svgrepo-com.svg" alt="Slack Icon" />
+								</div>
+								<h3>Slack / Discord</h3>
+								<p>Team chat & community management</p>
+							</div>
+
+							<div class="tool-card fade-in-up" style="animation-delay: 0.3s">
+								<div class="tool-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M9 11l3 3L22 4"></path>
+										<path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+									</svg>
+								</div>
+								<h3>ClickUp</h3>
+								<p>Task tracking & sprint planning</p>
+							</div>
+
+							<div class="tool-card fade-in-up" style="animation-delay: 0.45s">
+								<div class="tool-icon">
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<rect width="100" height="100" fill="#000"/>
+										<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="60" fill="#FFF">N</text>
+									</svg>
+								</div>
+								<h3>Notion</h3>
+								<p>Docs, wikis & project documentation</p>
+							</div>
 						</div>
-						<h3>Photoshop</h3>
-						<p>Image editing tool</p>
 					</div>
 
-					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
-						<div class="tool-icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<rect x="3" y="3" width="18" height="18" rx="2"></rect>
-								<path d="M9 3v18"></path>
-							</svg>
-						</div>
-						<h3>CapCut</h3>
-						<p>Video editing</p>
-					</div>
-
-					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
-						<div class="tool-icon">
-							<img src="projects/logo/slack-svgrepo-com.svg" alt="Slack Icon" />
-						</div>
-
-						<h3>Slack/Discord</h3>
-						<p>Communication</p>
-					</div>
-
-					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
-						<div class="tool-icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<path
-									d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-								></path>
-								<polyline points="14 2 14 8 20 8"></polyline>
-								<line x1="16" y1="13" x2="8" y2="13"></line>
-								<line x1="16" y1="17" x2="8" y2="17"></line>
-								<polyline points="10 9 9 9 8 9"></polyline>
-							</svg>
-						</div>
-						<h3>Canva</h3>
-						<p>Image editing, source</p>
-					</div>
-
-					<div class="tool-card fade-in-up" style="animation-delay: 0.5s">
-						<div class="tool-icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<rect x="3" y="3" width="18" height="18" rx="2"></rect>
-								<path d="M9 3v18"></path>
-							</svg>
-						</div>
-						<h3>ClickUp</h3>
-						<p>Project management</p>
-					</div>
-
-					<div class="tool-card fade-in-up" style="animation-delay: 0.6s">
-						<div class="tool-icon">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 100 100"
-								width="100"
-								height="100"
-							>
-								<rect width="100" height="100" fill="#000" />
-								<text
-									x="50%"
-									y="50%"
-									text-anchor="middle"
-									dominant-baseline="central"
-									font-family="Arial, Helvetica, sans-serif"
-									font-size="60"
-									fill="#FFF"
-								>
-									N
-								</text>
-							</svg>
-						</div>
-						<h3>Notion</h3>
-						<p>Documentation</p>
-					</div>
-
-					<div class="tool-card fade-in-up" style="animation-delay: 0.1s">
-						<div class="tool-icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							>
-								<circle cx="12" cy="12" r="10"></circle>
-								<line x1="2" y1="12" x2="22" y2="12"></line>
-								<path
-									d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-								></path>
-							</svg>
-						</div>
-						<h3>Git & GitHub</h3>
-						<p>Version control</p>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -370,7 +482,7 @@
 		<section id="projects" class="projects">
 			<div class="container">
 				<h2 class="section-title fade-in-up">Featured Projects</h2>
-				<p class="section-subtitle">Check out some of my recent work</p>
+				<p class="section-subtitle">A snapshot of what I can do — swipe to explore</p>
 				<!-- client -->
 				<div class="carousel-container">
 					<div class="carousel-wrapper">
@@ -403,12 +515,13 @@
 									</div>
 								</div>
 								<div class="project-content">
+									<span class="project-type-badge">Video Ads · Client Work</span>
 									<h3>Wolvyx Video Ads</h3>
-									<p>The most reliable leak-proof boxer for men</p>
+									<p>High-converting video ad campaign for a premium men's apparel brand — showcasing their leak-proof boxer line across multiple product tiers.</p>
 									<div class="project-tags">
-										<span class="tag">Wolf Pack</span>
-										<span class="tag">Alpha Pack</span>
-										<span class="tag">Elite Wolf Pack</span>
+										<span class="tag">Video Production</span>
+										<span class="tag">Ad Creative</span>
+										<span class="tag">E-commerce</span>
 									</div>
 								</div>
 							</div>
@@ -419,6 +532,7 @@
 									<img
 										src="projects/graphic/product showcase/2.png"
 										alt="Graphic Design Project"
+										loading="lazy"
 									/>
 									<div class="project-overlay">
 										<button
@@ -440,17 +554,15 @@
 									</div>
 								</div>
 								<div class="project-content">
-									<h3>Graphic design or video editing</h3>
+									<span class="project-type-badge">Graphic Design · Meta Ads</span>
+									<h3>Product Showcase & Ad Creative</h3>
 									<p>
-										Let's create high-impact assets that drive your business
-										forward
+										Eye-catching Meta ad creatives and product showcases designed to stop the scroll and drive conversions for e-commerce brands.
 									</p>
 									<div class="project-tags">
-										<span class="tag">MetaAds</span>
-										<span class="tag">ProductShowcase</span>
-										<span class="tag">DigitalAdvertising</span>
-										<span class="tag">AdCreative</span>
-										<span class="tag">PerformanceMarketing</span>
+										<span class="tag">Meta Ads</span>
+										<span class="tag">Product Showcase</span>
+										<span class="tag">Performance Marketing</span>
 									</div>
 								</div>
 							</div>
@@ -461,6 +573,7 @@
 									<img
 										src="projects/graphic/vsanimezone.png"
 										alt="Youtube Assistance"
+										loading="lazy"
 									/>
 									<div class="project-overlay">
 										<button
@@ -482,16 +595,16 @@
 									</div>
 								</div>
 								<div class="project-content">
-									<h3>Youtube Assistance</h3>
+									<span class="project-type-badge">Video Editing · YouTube</span>
+									<h3>YouTube Content Assistance</h3>
 									<p>
-										I can help you creating content, video editing, thumbnail
-										and shorts
+										Full-service YouTube support — long-form edits, Shorts, scroll-stopping thumbnails, and content strategy aligned with current trends.
 									</p>
 									<div class="project-tags">
-										<span class="tag">Long form</span>
-										<span class="tag">Short form</span>
-										<span class="tag">Thumbnail</span>
-										<span class="tag">Content creation trends</span>
+										<span class="tag">Long Form</span>
+										<span class="tag">Shorts & Reels</span>
+										<span class="tag">Thumbnails</span>
+										<span class="tag">Content Strategy</span>
 									</div>
 								</div>
 							</div>
@@ -502,6 +615,7 @@
 									<img
 										src="projects/landing-page/5.png"
 										alt="Web Development"
+										loading="lazy"
 									/>
 									<div class="project-overlay">
 										<button
@@ -523,17 +637,15 @@
 									</div>
 								</div>
 								<div class="project-content">
-									<h3>Web Development</h3>
+									<span class="project-type-badge">Web Development · Full Stack</span>
+									<h3>Landing Pages & Web Apps</h3>
 									<p>
-										From landing pages to full-featured websites, I develop
-										clean, modern, and reliable web solutions designed to
-										deliver results.
+										Clean, modern web solutions — from conversion-focused landing pages to full-featured applications built with Vue.js and Laravel.
 									</p>
 									<div class="project-tags">
 										<span class="tag">Vue.js</span>
 										<span class="tag">Laravel</span>
 										<span class="tag">MySQL</span>
-										<span class="tag">Bootstrap</span>
 										<span class="tag">JavaScript</span>
 									</div>
 								</div>
@@ -545,6 +657,7 @@
 									<img
 										src="projects/graphic/aicreations.png"
 										alt="AI Assistance"
+										loading="lazy"
 									/>
 									<div class="project-overlay">
 										<button
@@ -566,15 +679,14 @@
 									</div>
 								</div>
 								<div class="project-content">
-									<h3>AI Assistance</h3>
+									<span class="project-type-badge">AI Services · Content Creation</span>
+									<h3>AI-Powered Content Creation</h3>
 									<p>
-										I provide AI-driven content creation services that leverage
-										machine learning to help businesses create fast, accurate,
-										and engaging content.
+										Leveraging AI tools to generate fast, on-brand content — from text-to-image visuals to image-to-video animations that scale creative output.
 									</p>
 									<div class="project-tags">
-										<span class="tag">Image to video</span>
-										<span class="tag">Text to image</span>
+										<span class="tag">Image to Video</span>
+										<span class="tag">Text to Image</span>
 										<span class="tag">Gemini</span>
 										<span class="tag">ChatGPT</span>
 									</div>
@@ -628,11 +740,9 @@
 
 					<!-- Category Filters -->
 					<div class="category-filters">
-						<button class="filter-btn active" data-filter="all">All</button>
-						<button class="filter-btn" data-filter="graphic">
-							Graphic Design
-						</button>
-						<button class="filter-btn" data-filter="video">Video</button>
+						<button class="filter-btn active" data-filter="all">All <span class="filter-count">33</span></button>
+						<button class="filter-btn" data-filter="graphic">Graphic Design <span class="filter-count">18</span></button>
+						<button class="filter-btn" data-filter="video">Video <span class="filter-count">15</span></button>
 					</div>
 
 					<!-- Projects Grid -->
@@ -1145,15 +1255,12 @@
 
 						<div class="grid-project-card" data-category="video">
 							<div class="grid-project-image">
-								<div class="grid-project-image">
-									<iframe
-										src="https://drive.google.com/file/d/1ZmNjwyY_ButqmE29TmufP0iTGizPisFJ/preview"
-										style="width: 100%; height: 100%; border: none"
-										allow="autoplay"
-									>
-									</iframe>
-									<!-- rest of your overlay code -->
-								</div>
+								<iframe
+									src="https://drive.google.com/file/d/1ZmNjwyY_ButqmE29TmufP0iTGizPisFJ/preview"
+									style="width: 100%; height: 100%; border: none"
+									allow="autoplay"
+								>
+								</iframe>
 								<div class="grid-project-overlay">
 									<div class="overlay-content">
 										<button class="view-image-btn" aria-label="View full image">
@@ -1179,15 +1286,12 @@
 						</div>
 						<div class="grid-project-card" data-category="video">
 							<div class="grid-project-image">
-								<div class="grid-project-image">
-									<iframe
-										src="https://drive.google.com/file/d/1WfUcnc26gKICq3-4MC6Fohj9M8MXUgeN/preview"
-										style="width: 100%; height: 100%; border: none"
-										allow="autoplay"
-									>
-									</iframe>
-									<!-- rest of your overlay code -->
-								</div>
+								<iframe
+									src="https://drive.google.com/file/d/1WfUcnc26gKICq3-4MC6Fohj9M8MXUgeN/preview"
+									style="width: 100%; height: 100%; border: none"
+									allow="autoplay"
+								>
+								</iframe>
 								<div class="grid-project-overlay">
 									<div class="overlay-content">
 										<button class="view-image-btn" aria-label="View full image">
@@ -1656,6 +1760,10 @@
 					Let's create something amazing together! Reach out and let's discuss
 					your project.
 				</p>
+				<div class="contact-status">
+					<span class="status-dot"></span>
+					Currently available for freelance
+				</div>
 
 				<div class="contact-content">
 					<div class="contact-info fade-in-up">
@@ -1722,9 +1830,38 @@
 						</div>
 					</div>
 
+					<div class="contact-form-wrap fade-in-up" style="animation-delay: 0.2s">
+						<form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+							<!-- Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+							<div class="form-row">
+								<div class="form-group">
+									<label class="form-label" for="contact-name">Name</label>
+									<input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required />
+								</div>
+								<div class="form-group">
+									<label class="form-label" for="contact-email">Email</label>
+									<input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label" for="contact-subject">Subject</label>
+								<input class="form-input" type="text" id="contact-subject" name="subject" placeholder="Project inquiry" required />
+							</div>
+							<div class="form-group">
+								<label class="form-label" for="contact-message">Message</label>
+								<textarea class="form-textarea" id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary form-submit">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+								Send Message
+							</button>
+						</form>
+					</div>
+
 					<!-- Call to Action -->
 					<div class="contact-cta fade-in-up">
-						<h3>Let's connect?</h3>
+						<div class="cta-bg-text" aria-hidden="true">CONNECT</div>
+						<h3>Let's work together.</h3>
 						<p>
 							I'm available for freelance work and exciting new projects. Let's
 							collaborate and bring your ideas to life!
@@ -1780,7 +1917,7 @@
 						</p>
 						<div class="footer-social">
 							<a
-								href="https://github.com/yourusername"
+								href="https://github.com/jhop-xocdr"
 								class="footer-social-link"
 								aria-label="GitHub"
 								target="_blank"
@@ -1863,6 +2000,13 @@
 			</div>
 		</footer>
 
+		<!-- Back to Top -->
+		<button class="back-to-top" id="backToTop" aria-label="Back to top">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path d="M18 15l-6-6-6 6"></path></svg>
+		</button>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 		<script src="res/js/main.js"></script>
 	</body>
 </html>
