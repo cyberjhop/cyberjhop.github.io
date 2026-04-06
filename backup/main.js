@@ -2,48 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	"use strict";
 
-	// ===== TYPEWRITER EFFECT =====
-	const typewriterEl = document.querySelector(".typewriter-text");
-	if (typewriterEl) {
-		const roles = [
-			"I'm a Full Stack Developer",
-			"I'm a Graphic Designer",
-			"I'm a Video Editor",
-		];
-		let roleIndex = 0;
-		let charIndex = 0;
-		let isDeleting = false;
-
-		function type() {
-			const current = roles[roleIndex];
-			if (isDeleting) {
-				typewriterEl.textContent = current.substring(0, charIndex - 1);
-				charIndex--;
-			} else {
-				typewriterEl.textContent = current.substring(0, charIndex + 1);
-				charIndex++;
-			}
-
-			let delay = isDeleting ? 50 : 90;
-
-			if (!isDeleting && charIndex === current.length) {
-				delay = 1800;
-				isDeleting = true;
-				typewriterEl.classList.remove("flash");
-				void typewriterEl.offsetWidth; // force reflow
-				typewriterEl.classList.add("flash");
-			} else if (isDeleting && charIndex === 0) {
-				isDeleting = false;
-				roleIndex = (roleIndex + 1) % roles.length;
-				delay = 400;
-			}
-
-			setTimeout(type, delay);
-		}
-
-		setTimeout(type, 800);
-	}
-
 	// ===== HERO STAT COUNT-UP =====
 	document.querySelectorAll(".hero-stat strong").forEach((el) => {
 		const raw = el.textContent.trim();
@@ -60,33 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (count >= num) clearInterval(timer);
 		}, interval);
 	});
-
-	// ===== ABOUT STAT COUNT-UP (scroll-triggered) =====
-	const aboutStats = document.querySelectorAll(".about-stats .stat-number");
-	if (aboutStats.length) {
-		const aboutObserver = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (!entry.isIntersecting) return;
-				aboutObserver.unobserve(entry.target);
-				const el = entry.target;
-				const raw = el.getAttribute("data-value") || el.textContent.trim();
-				el.setAttribute("data-value", raw);
-				const num = parseInt(raw);
-				if (isNaN(num)) return;
-				const suffix = raw.replace(String(num), "");
-				let count = 0;
-				const steps = Math.min(num, 60);
-				const interval = 1000 / steps;
-				const increment = Math.ceil(num / steps);
-				const timer = setInterval(() => {
-					count = Math.min(count + increment, num);
-					el.textContent = count + suffix;
-					if (count >= num) clearInterval(timer);
-				}, interval);
-			});
-		}, { threshold: 0.5 });
-		aboutStats.forEach((el) => aboutObserver.observe(el));
-	}
 
 	// ===== MOBILE MENU TOGGLE =====
 	const hamburger = document.querySelector(".hamburger");
