@@ -5,7 +5,15 @@
       "Bash(python:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "mcp__21st-dev-magic__21st_magic_component_inspiration",
+      "Bash(xargs grep:*)",
+      "mcp__magic__21st_magic_component_inspiration",
+      "Bash(claude mcp:*)",
+      "Bash(node -e ':*)",
+      "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/index.html\" \"C:/Users/user/Documents/cyberjhop.github.io/index.html.bak\")",
+      "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/res/css/main.css\" \"C:/Users/user/Documents/cyberjhop.github.io/res/css/main.css.bak\")",
+      "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js\" \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js.bak\")"
     ]
   }
 }
