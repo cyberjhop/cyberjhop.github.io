@@ -13,7 +13,16 @@
       "Bash(node -e ':*)",
       "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/index.html\" \"C:/Users/user/Documents/cyberjhop.github.io/index.html.bak\")",
       "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/res/css/main.css\" \"C:/Users/user/Documents/cyberjhop.github.io/res/css/main.css.bak\")",
-      "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js\" \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js.bak\")"
+      "Bash(cp \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js\" \"C:/Users/user/Documents/cyberjhop.github.io/res/js/main.js.bak\")",
+      "Bash(curl *)",
+      "WebFetch(domain:localhost)",
+      "Bash(grep -c \"^.* {$\")",
+      "Bash(node *)",
+      "Bash(git config *)",
+      "Read(//c/Users/user/.ssh/**)",
+      "Bash(ssh *)",
+      "Bash(ssh-keygen *)",
+      "Bash(git remote *)"
     ]
   }
 }

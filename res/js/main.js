@@ -239,6 +239,42 @@ document.addEventListener("DOMContentLoaded", function () {
 		);
 	});
 
+	// Testimonial cards — individual self-triggers
+	gsap.utils.toArray(".testimonial-card").forEach((card, i) => {
+		gsap.from(card, {
+			scrollTrigger: { trigger: card, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.65,
+			ease: "power2.out",
+			delay: i * 0.1,
+		});
+	});
+
+	// Process cards — individual self-triggers
+	gsap.utils.toArray(".process-card").forEach((card, i) => {
+		gsap.from(card, {
+			scrollTrigger: { trigger: card, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.65,
+			ease: "power2.out",
+			delay: i * 0.1,
+		});
+	});
+
+	// Case study cards — individual self-triggers
+	gsap.utils.toArray(".case-study-card").forEach((card, i) => {
+		gsap.from(card, {
+			scrollTrigger: { trigger: card, start: "top 85%" },
+			opacity: 0,
+			y: 20,
+			duration: 0.65,
+			ease: "power2.out",
+			delay: i * 0.1,
+		});
+	});
+
 	// Tool cards — individual self-triggers
 	gsap.utils.toArray(".tool-card").forEach((card, i) => {
 		gsap.from(card, {
@@ -748,59 +784,3 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 });
-
-// ===== CUSTOM CURSOR =====
-(function () {
-	const dot = document.createElement('div');
-	const ring = document.createElement('div');
-	dot.className = 'cursor-dot';
-	ring.className = 'cursor-ring';
-	document.body.appendChild(dot);
-	document.body.appendChild(ring);
-
-	let ringX = 0, ringY = 0;
-	let dotX = 0, dotY = 0;
-	let raf;
-
-	document.addEventListener('mousemove', (e) => {
-		dotX = e.clientX;
-		dotY = e.clientY;
-		dot.style.left = dotX + 'px';
-		dot.style.top = dotY + 'px';
-	});
-
-	function animateRing() {
-		ringX += (dotX - ringX) * 0.12;
-		ringY += (dotY - ringY) * 0.12;
-		ring.style.left = ringX + 'px';
-		ring.style.top = ringY + 'px';
-		raf = requestAnimationFrame(animateRing);
-	}
-	animateRing();
-
-	const hoverTargets = 'a, button, [data-filter], .project-card, label, input, textarea, select, [role="button"]';
-
-	document.addEventListener('mouseover', (e) => {
-		if (e.target.closest(hoverTargets)) {
-			dot.classList.add('hovering');
-			ring.classList.add('hovering');
-		}
-	});
-
-	document.addEventListener('mouseout', (e) => {
-		if (e.target.closest(hoverTargets)) {
-			dot.classList.remove('hovering');
-			ring.classList.remove('hovering');
-		}
-	});
-
-	document.addEventListener('mouseleave', () => {
-		dot.style.opacity = '0';
-		ring.style.opacity = '0';
-	});
-
-	document.addEventListener('mouseenter', () => {
-		dot.style.opacity = '1';
-		ring.style.opacity = '0.6';
-	});
-}());
