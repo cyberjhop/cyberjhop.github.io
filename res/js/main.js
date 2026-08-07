@@ -61,6 +61,23 @@ document.addEventListener("DOMContentLoaded", function () {
 		}, interval);
 	});
 
+	// ===== SCROLL-TRIGGERED AUTOPLAY IFRAME (Google Drive embeds) =====
+	const scrollAutoplayIframes = document.querySelectorAll(".scroll-autoplay-iframe");
+	if (scrollAutoplayIframes.length) {
+		const iframeObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const iframe = entry.target;
+					if (entry.isIntersecting && !iframe.src) {
+						iframe.src = iframe.dataset.src;
+					}
+				});
+			},
+			{ threshold: 0.5 }
+		);
+		scrollAutoplayIframes.forEach((iframe) => iframeObserver.observe(iframe));
+	}
+
 	// ===== ABOUT STAT COUNT-UP (scroll-triggered) =====
 	const aboutStats = document.querySelectorAll(".about-stats .stat-number");
 	if (aboutStats.length) {
@@ -190,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// About section
 	gsap.from(".about-text", {
-		scrollTrigger: ".about-text",
+		scrollTrigger: { trigger: ".about-text", once: true },
 		opacity: 0,
 		y: 20,
 		duration: 0.8,
@@ -198,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		delay: 0.15,
 	});
 	gsap.from(".about-highlights li", {
-		scrollTrigger: ".about-highlights",
+		scrollTrigger: { trigger: ".about-highlights", once: true },
 		opacity: 0,
 		y: 20,
 		duration: 0.6,
@@ -210,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Skill cards — individual self-triggers (stagger via delay)
 	gsap.utils.toArray(".skill-card").forEach((card, i) => {
 		gsap.from(card, {
-			scrollTrigger: { trigger: card, start: "top 85%" },
+			scrollTrigger: { trigger: card, start: "top 85%", once: true },
 			opacity: 0,
 			y: 20,
 			duration: 0.7,
@@ -234,27 +251,16 @@ document.addEventListener("DOMContentLoaded", function () {
 				scrollTrigger: {
 					trigger: card,
 					start: "top 85%",
+					once: true,
 				},
 			}
 		);
 	});
 
-	// Testimonial cards — individual self-triggers
-	gsap.utils.toArray(".testimonial-card").forEach((card, i) => {
-		gsap.from(card, {
-			scrollTrigger: { trigger: card, start: "top 85%" },
-			opacity: 0,
-			y: 20,
-			duration: 0.65,
-			ease: "power2.out",
-			delay: i * 0.1,
-		});
-	});
-
 	// Process cards — individual self-triggers
 	gsap.utils.toArray(".process-card").forEach((card, i) => {
 		gsap.from(card, {
-			scrollTrigger: { trigger: card, start: "top 85%" },
+			scrollTrigger: { trigger: card, start: "top 85%", once: true },
 			opacity: 0,
 			y: 20,
 			duration: 0.65,
@@ -266,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Case study cards — individual self-triggers
 	gsap.utils.toArray(".case-study-card").forEach((card, i) => {
 		gsap.from(card, {
-			scrollTrigger: { trigger: card, start: "top 85%" },
+			scrollTrigger: { trigger: card, start: "top 85%", once: true },
 			opacity: 0,
 			y: 20,
 			duration: 0.65,
@@ -278,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Tool cards — individual self-triggers
 	gsap.utils.toArray(".tool-card").forEach((card, i) => {
 		gsap.from(card, {
-			scrollTrigger: { trigger: card, start: "top 85%" },
+			scrollTrigger: { trigger: card, start: "top 85%", once: true },
 			opacity: 0,
 			y: 20,
 			duration: 0.65,
@@ -290,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Project grid cards — batch visible cards together, no accumulated delay
 	ScrollTrigger.batch(".grid-project-card", {
 		start: "top 92%",
+		once: true,
 		onEnter: (batch) => gsap.from(batch, {
 			opacity: 0,
 			y: 20,
@@ -302,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Contact info items — individual self-triggers
 	gsap.utils.toArray(".info-item").forEach((item, i) => {
 		gsap.from(item, {
-			scrollTrigger: { trigger: item, start: "top 85%" },
+			scrollTrigger: { trigger: item, start: "top 85%", once: true },
 			opacity: 0,
 			y: 20,
 			duration: 0.65,
@@ -311,14 +318,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 	gsap.from(".contact-form-wrap", {
-		scrollTrigger: ".contact-form-wrap",
+		scrollTrigger: { trigger: ".contact-form-wrap", once: true },
 		opacity: 0,
 		y: 20,
 		duration: 0.8,
 		ease: "power2.out",
 	});
 	gsap.from(".contact-cta", {
-		scrollTrigger: ".contact-cta",
+		scrollTrigger: { trigger: ".contact-cta", once: true },
 		opacity: 0,
 		y: 20,
 		duration: 0.7,
@@ -369,6 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				trigger: el,
 				start: "top 85%",
 				toggleActions: "play none none none",
+				once: true,
 			}
 		});
 	}
@@ -503,33 +511,193 @@ document.addEventListener("DOMContentLoaded", function () {
 		startAutoplay();
 	}
 
-	// ===== CATEGORY FILTER FUNCTIONALITY =====
-	const filterButtons = document.querySelectorAll(".filter-btn");
-	const projectCards = document.querySelectorAll(".grid-project-card");
+	// ===== CATEGORY FILTER: grid for "All", fanned pile per category =====
+	const filterButtons = document.querySelectorAll(".category-card");
+	const projectsGrid = document.querySelector(".projects-grid");
+	const fanStageWrap = document.getElementById("fanStageWrap");
+	const fanStage = document.getElementById("fanStage");
+	// Captured once, in original document order — the single source of truth
+	// for where each project card belongs, regardless of which view (grid or
+	// fan) currently holds the node.
+	const allProjectCards = Array.from(document.querySelectorAll(".grid-project-card"));
+
+	const FAN_ANGLE_STEP = 6; // degrees between adjacent cards — fixed, so the
+	// fan stays legible whether a category has 3 cards or 18. Total spread
+	// grows with the card count instead of being squeezed into one range.
+	const FAN_MAX_LIFT = 8; // px the center card lifts above the outer cards
+
+	function layoutFan(cards) {
+		const total = cards.length;
+		const center = (total - 1) / 2;
+		const maxOffset = center || 1;
+
+		cards.forEach((card, index) => {
+			const offset = index - center;
+			const rot = offset * FAN_ANGLE_STEP;
+			const ty = -FAN_MAX_LIFT * (1 - Math.abs(offset) / maxOffset);
+
+			card.classList.add("fan-card");
+			card.classList.remove("hide");
+			card.style.display = "";
+			card.style.setProperty("--rot", `${rot.toFixed(2)}deg`);
+			card.style.setProperty("--ty", `${ty.toFixed(2)}px`);
+			card.style.setProperty("--z", index + 1);
+			fanStage.appendChild(card);
+		});
+	}
+
+	function showAllCategory() {
+		allProjectCards.forEach((card) => {
+			card.classList.remove("fan-card", "hide");
+			card.style.display = "";
+			card.style.removeProperty("--rot");
+			card.style.removeProperty("--ty");
+			card.style.removeProperty("--z");
+			projectsGrid.appendChild(card);
+		});
+
+		projectsGrid.style.display = "";
+		projectsGrid.classList.remove("is-filtered-grid");
+		fanStageWrap.classList.remove("active");
+	}
+
+	function showSingleCategory(filterValue) {
+		const matching = [];
+
+		allProjectCards.forEach((card) => {
+			if (card.getAttribute("data-category") === filterValue) {
+				matching.push(card);
+			} else if (card.parentElement !== projectsGrid) {
+				card.classList.remove("fan-card");
+				projectsGrid.appendChild(card);
+			}
+		});
+
+		projectsGrid.style.display = "none";
+		projectsGrid.classList.remove("is-filtered-grid");
+		fanStageWrap.classList.add("active");
+		layoutFan(matching);
+	}
+
+	// Clicking the fanned stack expands it into a grid of just that category,
+	// mirroring the "All" grid layout instead of the cramped fan.
+	function expandCategoryGrid(filterValue) {
+		const matching = [];
+		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+		allProjectCards.forEach((card) => {
+			const isMatch = card.getAttribute("data-category") === filterValue;
+
+			card.classList.remove("fan-card");
+			card.style.removeProperty("--rot");
+			card.style.removeProperty("--ty");
+			card.style.removeProperty("--z");
+			card.style.removeProperty("--scale");
+
+			if (isMatch) {
+				card.classList.remove("hide");
+				card.style.display = "";
+				matching.push(card);
+			} else {
+				card.classList.add("hide");
+			}
+
+			projectsGrid.appendChild(card);
+		});
+
+		fanStageWrap.classList.remove("active");
+		projectsGrid.classList.add("is-filtered-grid");
+		projectsGrid.style.display = "";
+
+		if (!reducedMotion && typeof gsap !== "undefined") {
+			gsap.fromTo(
+				matching,
+				{ opacity: 0, y: 24, scale: 0.94 },
+				{ opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power2.out", stagger: 0.05, clearProps: "transform" }
+			);
+		}
+	}
+
+	if (fanStage) {
+		const activateStack = () => {
+			if (!fanStageWrap.classList.contains("active")) return;
+			const activeButton = document.querySelector(".category-card.active");
+			const filterValue = activeButton && activeButton.getAttribute("data-filter");
+			if (filterValue && filterValue !== "all") {
+				expandCategoryGrid(filterValue);
+			}
+		};
+
+		fanStage.addEventListener("click", activateStack);
+		fanStage.addEventListener("keydown", (e) => {
+			if (e.key === "Enter" || e.key === " ") {
+				e.preventDefault();
+				activateStack();
+			}
+		});
+	}
 
 	filterButtons.forEach((button) => {
 		button.addEventListener("click", () => {
-			// Remove active class from all buttons
-			filterButtons.forEach((btn) => btn.classList.remove("active"));
+			// Remove active state from all cards
+			filterButtons.forEach((btn) => {
+				btn.classList.remove("active");
+				btn.setAttribute("aria-pressed", "false");
+			});
 
-			// Add active class to clicked button
+			// Mark clicked card as active
 			button.classList.add("active");
+			button.setAttribute("aria-pressed", "true");
 
 			const filterValue = button.getAttribute("data-filter");
 
-			projectCards.forEach((card) => {
-				const category = card.getAttribute("data-category");
-
-				if (filterValue === "all" || category === filterValue) {
-					// Show card
-					card.classList.remove("hide");
-					card.style.display = "block";
-				} else {
-					// Hide card
-					card.classList.add("hide");
-				}
-			});
+			if (filterValue === "all") {
+				showAllCategory();
+			} else {
+				showSingleCategory(filterValue);
+			}
 		});
+	});
+
+	// ===== VIEW ALL PROJECTS MODAL =====
+	const categorizedWork = document.getElementById("categorizedWork");
+	const viewAllProjectsBtn = document.getElementById("viewAllProjectsBtn");
+	const projectsModalClose = document.getElementById("projectsModalClose");
+
+	function openProjectsModal() {
+		categorizedWork.classList.add("expanded");
+		document.body.style.overflow = "hidden";
+	}
+
+	function closeProjectsModal() {
+		categorizedWork.classList.remove("expanded");
+		document.body.style.overflow = "";
+
+		// Reset back to "All" so the collapsed preview grid is whole again —
+		// otherwise whichever category was fanned out stays parked outside
+		// .projects-grid and the preview would be missing those cards.
+		const allButton = document.querySelector('.category-card[data-filter="all"]');
+		if (allButton && !allButton.classList.contains("active")) {
+			allButton.click();
+		}
+	}
+
+	if (viewAllProjectsBtn && categorizedWork) {
+		viewAllProjectsBtn.addEventListener("click", openProjectsModal);
+	}
+
+	if (projectsModalClose && categorizedWork) {
+		projectsModalClose.addEventListener("click", closeProjectsModal);
+	}
+
+	document.addEventListener("keydown", (e) => {
+		if (
+			e.key === "Escape" &&
+			categorizedWork &&
+			categorizedWork.classList.contains("expanded")
+		) {
+			closeProjectsModal();
+		}
 	});
 
 	// ===== LIGHTBOX FUNCTIONALITY =====
@@ -693,20 +861,42 @@ document.addEventListener("DOMContentLoaded", function () {
 			const projectCard = button.closest(".project-card");
 			const image = projectCard.querySelector(".project-image img");
 			const video = projectCard.querySelector(".project-image video"); // ✅ Also look for video
+			const iframe = projectCard.querySelector(".project-image iframe");
 			const projectTitle = projectCard.querySelector(".project-content h3");
 
 			console.log("Carousel project card:", projectCard);
 			console.log("Image found:", !!image);
 			console.log("Video found:", !!video); // ✅ Log video
+			console.log("Iframe found:", !!iframe);
 
 			// Get existing lightbox elements
 			const lightbox = document.getElementById("lightbox");
 			const lightboxImage = document.getElementById("lightboxImage");
 			const lightboxVideo = document.getElementById("lightboxVideo");
+			const lightboxIframe = document.getElementById("lightboxIframe");
 			const lightboxInfo = document.getElementById("lightboxInfo");
 
-			// Check if it's a video or image
-			if (video) {
+			// Check if it's an iframe, video, or image
+			if (iframe) {
+				// ✅ Handle Google Drive iframe embed
+				const iframeSrc = iframe.src || iframe.dataset.src;
+				console.log("🎞️ Opening carousel iframe:", iframeSrc);
+
+				lightboxImage.style.display = "none";
+				lightboxVideo.style.display = "none";
+				lightboxIframe.style.display = "block";
+				lightboxIframe.src = iframeSrc;
+
+				if (projectTitle) {
+					lightboxInfo.querySelector("h4").textContent =
+						projectTitle.textContent;
+				}
+
+				lightbox.classList.add("active");
+				document.body.style.overflow = "hidden";
+
+				console.log("🎞️ Carousel iframe lightbox opened!");
+			} else if (video) {
 				// ✅ Handle video
 				console.log("📹 Opening carousel video:", video.src);
 
@@ -780,6 +970,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 		backToTopBtn.addEventListener('click', () => {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	}
+
+	// ===== CONTACT FORM (mailto fallback — no backend on GitHub Pages) =====
+	const contactForm = document.getElementById('contactForm');
+	if (contactForm) {
+		contactForm.addEventListener('submit', function (e) {
+			e.preventDefault();
+			const name = contactForm.querySelector('#contact-name').value;
+			const email = contactForm.querySelector('#contact-email').value;
+			const subject = contactForm.querySelector('#contact-subject').value;
+			const message = contactForm.querySelector('#contact-message').value;
+
+			const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+			const mailtoUrl = `mailto:cyberjhop@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			window.location.href = mailtoUrl;
 		});
 	}
 

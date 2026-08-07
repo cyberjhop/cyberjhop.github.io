@@ -22,7 +22,20 @@
       "Read(//c/Users/user/.ssh/**)",
       "Bash(ssh *)",
       "Bash(ssh-keygen *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\\\\\(x86\\\\\\)/Google/Chrome/Application/**)",
+      "Bash(command -v chromium-cli)",
+      "Bash(npm ls *)",
+      "Bash(kill -9 %1)",
+      "Bash(jobs -l)",
+      "PowerShell(Start-Process \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" -ArgumentList \"http://localhost:8000/index.html\")",
+      "Bash(npm --version)",
+      "Bash(mkdir -p /tmp/chrome-profile)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --remote-debugging-port=9222 --remote-allow-origins=* --user-data-dir=/tmp/chrome-profile --no-first-run --no-default-browser-check about:blank)",
+      "Bash(taskkill //F //IM chrome.exe)",
+      "Bash(rm -rf /tmp/chrome-profile2)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --remote-debugging-port=9222 --remote-allow-origins=* --user-data-dir=/tmp/chrome-profile2 --no-first-run --no-default-browser-check about:blank)"
     ]
   }
 }
