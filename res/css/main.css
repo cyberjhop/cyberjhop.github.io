@@ -202,6 +202,15 @@ body {
     line-height: 1;
 }
 
+/* Ambient orb parallax wrappers — GSAP moves these; CSS keyframes float the orb inside */
+.hero-orb-wrap {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+}
+
 /* Ambient orbs */
 .hero-orb {
     position: absolute;
@@ -945,6 +954,69 @@ section {
     .youtube-status {
         position: static;
         align-self: flex-start;
+    }
+}
+
+.reel {
+    padding: 6rem 0;
+}
+
+.reel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+    margin-top: 3rem;
+}
+
+.reel-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.reel-placeholder {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    border: 1px dashed rgba(255, 192, 1, 0.25);
+    border-radius: 18px;
+    color: rgba(255, 192, 1, 0.35);
+}
+
+.reel-card:hover .reel-placeholder {
+    border-color: rgba(255, 192, 1, 0.4);
+    color: rgba(255, 192, 1, 0.5);
+}
+
+.reel-placeholder svg {
+    width: 42px;
+    height: 42px;
+}
+
+.reel-status {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+    background: rgba(255, 192, 1, 0.1);
+    border: 1px solid rgba(255, 192, 1, 0.3);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .reel-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 }
 

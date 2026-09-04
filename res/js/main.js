@@ -331,30 +331,48 @@ document.addEventListener("DOMContentLoaded", function () {
 		duration: 0.7,
 		ease: "power2.out",
 	});
-	// ===== HERO PARALLAX SCRUB =====
-	// Hero content lifts as you scroll away (no opacity — avoids blank on scroll-back)
-	gsap.to(".hero-content", {
-		y: -60,
-		ease: "none",
-		scrollTrigger: {
-			trigger: "#home",
-			start: "top top",
-			end: "bottom top",
-			scrub: 1,
-		}
-	});
+	// ===== HERO / ABOUT PARALLAX SCRUB =====
+	// Layered depth effect: background orbs move slowest, content mid-speed,
+	// scroll cue fastest (and fades out). Desktop-only — mobile keeps everything
+	// static to avoid scroll jank, matching the existing 768px breakpoint.
+	let mm = gsap.matchMedia();
+	mm.add("(min-width: 769px)", () => {
 
-	// ===== ABOUT IMAGE PARALLAX =====
-	// Image drifts slightly slower than surrounding text
-	gsap.to(".about-image", {
-		y: -30,
-		ease: "none",
-		scrollTrigger: {
-			trigger: "#about",
-			start: "top bottom",
-			end: "bottom top",
-			scrub: 1,
-		}
+		// Background layer — ambient orbs drift slowest (~0.4x of the content layer below)
+		gsap.to(".hero-orb-wrap-1", {
+			y: -50,
+			ease: "none",
+			scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+		});
+		gsap.to(".hero-orb-wrap-2", {
+			y: -75,
+			ease: "none",
+			scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+		});
+
+		// Midground — hero content lifts as you scroll away (no opacity — avoids blank on scroll-back)
+		gsap.to(".hero-content", {
+			y: -130,
+			ease: "none",
+			scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+		});
+
+		// Foreground — scroll cue moves fastest and fades out first
+		gsap.to(".hero-scroll", {
+			y: -170,
+			xPercent: -50,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+		});
+
+		// About image drifts against the static surrounding text for depth
+		gsap.to(".about-image", {
+			y: -100,
+			ease: "none",
+			scrollTrigger: { trigger: "#about", start: "top bottom", end: "bottom top", scrub: 1 }
+		});
+
 	});
 
 	// ===== STATS COUNT-UP =====
