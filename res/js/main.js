@@ -529,88 +529,30 @@ document.addEventListener("DOMContentLoaded", function () {
 		startAutoplay();
 	}
 
-	// ===== CATEGORY FILTER: grid for "All", fanned pile per category =====
+	// ===== CATEGORY FILTER: grid for "All" and for a single category =====
 	const filterButtons = document.querySelectorAll(".category-card");
 	const projectsGrid = document.querySelector(".projects-grid");
-	const fanStageWrap = document.getElementById("fanStageWrap");
-	const fanStage = document.getElementById("fanStage");
 	// Captured once, in original document order — the single source of truth
-	// for where each project card belongs, regardless of which view (grid or
-	// fan) currently holds the node.
+	// for where each project card belongs.
 	const allProjectCards = Array.from(document.querySelectorAll(".grid-project-card"));
-
-	const FAN_ANGLE_STEP = 6; // degrees between adjacent cards — fixed, so the
-	// fan stays legible whether a category has 3 cards or 18. Total spread
-	// grows with the card count instead of being squeezed into one range.
-	const FAN_MAX_LIFT = 8; // px the center card lifts above the outer cards
-
-	function layoutFan(cards) {
-		const total = cards.length;
-		const center = (total - 1) / 2;
-		const maxOffset = center || 1;
-
-		cards.forEach((card, index) => {
-			const offset = index - center;
-			const rot = offset * FAN_ANGLE_STEP;
-			const ty = -FAN_MAX_LIFT * (1 - Math.abs(offset) / maxOffset);
-
-			card.classList.add("fan-card");
-			card.classList.remove("hide");
-			card.style.display = "";
-			card.style.setProperty("--rot", `${rot.toFixed(2)}deg`);
-			card.style.setProperty("--ty", `${ty.toFixed(2)}px`);
-			card.style.setProperty("--z", index + 1);
-			fanStage.appendChild(card);
-		});
-	}
 
 	function showAllCategory() {
 		allProjectCards.forEach((card) => {
-			card.classList.remove("fan-card", "hide");
+			card.classList.remove("hide");
 			card.style.display = "";
-			card.style.removeProperty("--rot");
-			card.style.removeProperty("--ty");
-			card.style.removeProperty("--z");
 			projectsGrid.appendChild(card);
 		});
 
 		projectsGrid.style.display = "";
 		projectsGrid.classList.remove("is-filtered-grid");
-		fanStageWrap.classList.remove("active");
 	}
 
 	function showSingleCategory(filterValue) {
-		const matching = [];
-
-		allProjectCards.forEach((card) => {
-			if (card.getAttribute("data-category") === filterValue) {
-				matching.push(card);
-			} else if (card.parentElement !== projectsGrid) {
-				card.classList.remove("fan-card");
-				projectsGrid.appendChild(card);
-			}
-		});
-
-		projectsGrid.style.display = "none";
-		projectsGrid.classList.remove("is-filtered-grid");
-		fanStageWrap.classList.add("active");
-		layoutFan(matching);
-	}
-
-	// Clicking the fanned stack expands it into a grid of just that category,
-	// mirroring the "All" grid layout instead of the cramped fan.
-	function expandCategoryGrid(filterValue) {
 		const matching = [];
 		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 		allProjectCards.forEach((card) => {
 			const isMatch = card.getAttribute("data-category") === filterValue;
-
-			card.classList.remove("fan-card");
-			card.style.removeProperty("--rot");
-			card.style.removeProperty("--ty");
-			card.style.removeProperty("--z");
-			card.style.removeProperty("--scale");
 
 			if (isMatch) {
 				card.classList.remove("hide");
@@ -623,7 +565,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			projectsGrid.appendChild(card);
 		});
 
-		fanStageWrap.classList.remove("active");
 		projectsGrid.classList.add("is-filtered-grid");
 		projectsGrid.style.display = "";
 
@@ -634,25 +575,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				{ opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power2.out", stagger: 0.05, clearProps: "transform" }
 			);
 		}
-	}
-
-	if (fanStage) {
-		const activateStack = () => {
-			if (!fanStageWrap.classList.contains("active")) return;
-			const activeButton = document.querySelector(".category-card.active");
-			const filterValue = activeButton && activeButton.getAttribute("data-filter");
-			if (filterValue && filterValue !== "all") {
-				expandCategoryGrid(filterValue);
-			}
-		};
-
-		fanStage.addEventListener("click", activateStack);
-		fanStage.addEventListener("keydown", (e) => {
-			if (e.key === "Enter" || e.key === " ") {
-				e.preventDefault();
-				activateStack();
-			}
-		});
 	}
 
 	filterButtons.forEach((button) => {
@@ -692,8 +614,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.body.style.overflow = "";
 
 		// Reset back to "All" so the collapsed preview grid is whole again —
-		// otherwise whichever category was fanned out stays parked outside
-		// .projects-grid and the preview would be missing those cards.
+		// otherwise a filtered category would leave other cards hidden
+		// when the preview is shown again.
 		const allButton = document.querySelector('.category-card[data-filter="all"]');
 		if (allButton && !allButton.classList.contains("active")) {
 			allButton.click();
